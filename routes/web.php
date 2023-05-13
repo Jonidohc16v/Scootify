@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-/*HELLO!*/
+/*HELLO WORLD!*/
 
 Route::get('/', function () {
     return view('welcome');
