@@ -32,16 +32,15 @@ rel="stylesheet"
     
 <footer class="mt-auto">
 
-<section class="">
+<section class="w-100">
   <!-- Footer -->
   <footer class="text-center text-white" style="background-color: #5ccfa9;">
     <!-- Grid container -->
     <div class="container p-4 pb-0">
       <!-- Section: CTA -->
 
-      <section class="d-flex justify-content-center text-align-center gap-5">
-        <p><img src="{{asset('images/logo-1.png')}}" class="rounded" style="width:40px" alt="logo"></p>
-        <p class=""><a href=""><span class="text-dark text-align-center">FAQ</span></a></p>
+      <section class="d-flex justify-content-center gap-4" style="height:px;">
+        <p class=""><a href=""><span class="text-dark">FAQ</span></a></p>
         <p class=""><a href=""><span class="text-dark">Contact us!</span> </a></p> 
       </section>
       <!-- Section: CTA -->
@@ -49,9 +48,13 @@ rel="stylesheet"
     <!-- Grid container -->
 
     
-    <div class="text-center d-flex justify-content-around ml-50" style="background-color: rgba(0, 0, 0, 0.2);" >
-    <section class="p-1 text-center p-100" style="margin-right:-1500px">
+    <div class="text-center d-flex justify-content-between" style="background-color: rgba(0, 0, 0, 0.2);" >
+  
+    <section class="p-2"><p><img src="{{asset('images/logo-1.png')}}" class="rounded" style="width:40px;" alt="logo"></p></section>
+
+    <section class="p-1 text-center p-100">
       <!-- Facebook -->
+      
       <a
         class="btn btn-link btn-floating btn-lg text-dark m-1"
         href="#!"
@@ -80,11 +83,11 @@ rel="stylesheet"
       </section> 
 
       <!-- Back to top button -->
-      <div class="d-flex justify-content-end position-relative" style="left:620px">
-        <button type="button" class="btn btn-danger btn-floating btn-lg d-flex justify-content-end position-relative" id="btn-back-to-top">
+      <section class="p-2">
+        <button type="button" class="btn btn-danger btn-floating btn-lg d-flex" id="btn-back-to-top">
             <i class="fas fa-arrow-up"></i>
         </button>
-        </div>
+</section>
       
 </div>
 </section>
