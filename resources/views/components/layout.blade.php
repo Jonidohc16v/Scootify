@@ -27,13 +27,13 @@
     </script>
 
 <style>
-    nav{
+    body{
         font-family: 'Play', sans-serif;
         text-align: center;
     }
 
     /*Code to change color of active link*/
-    .navbar-nav .active a {
+    .navbar-nav .active a { 
         color: #34b38a;
     }
 </style>
@@ -131,8 +131,8 @@
       <!-- Section: CTA -->
 
       <section class="d-flex justify-content-center gap-4">
-        <p class=""><a href=""><span class="text-dark">FAQ</span></a></p>
-        <p class=""><a href=""><span class="text-dark">Contact us!</span> </a></p> 
+        <p class=""><a href="/faq"><span class="text-dark">FAQ</span></a></p>
+        <p class=""><a href="/contactus"><span class="text-dark">Contact us!</span> </a></p> 
       </section>
       <!-- Section: CTA -->
     </div>
