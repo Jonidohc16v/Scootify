@@ -63,8 +63,8 @@
             class="d-block w-100"  
             alt="Sunset Over the City"
             style="height:25rem"/>
-    <div class="carousel-caption d-none d-md-block">
-        <h5 class="bg-transparent bg-gradient"> Kirchberg - Lux Expo</h5>
+            <div class="carousel-caption text-end top-0">
+        <h4 style="text-shadow: #34b38a 1px 0 10px;"> Kirchberg - Lux Expo</h4>
     </div>
 </div>
 
@@ -74,8 +74,8 @@
             class="d-block w-100"  
             alt="Sunset Over the City"
             style="height:25rem"/>
-    <div class="carousel-caption d-none d-md-block">
-        <h5 class="bg-transparent bg-gradient">Cloche d'Or</h5>
+            <div class="carousel-caption text-start top-0">
+        <h4 style="text-shadow: #34b38a 1px 0 10px;">Cloche d'Or</h4>
     </div>
 </div>
 
@@ -85,8 +85,8 @@
             class="d-block w-100"  
             alt="Sunset Over the City"
             style="height:25rem"/>
-    <div class="carousel-caption d-none d-md-block">
-        <h5 class="bg-transparent bg-gradient">Central Station</h5>
+            <div class="carousel-caption text-start top-0">
+        <h4 style="text-shadow: #34b38a 1px 0 10px;">Central Station</h4>
     </div>
 </div>
 
@@ -97,30 +97,31 @@
             alt="Sunset Over the City"
             style="height:25rem"/>
     <div class="carousel-caption d-none d-md-block">
-        <h5 class="bg-transparent bg-gradient">Theater</h5>
+        <h4 style="text-shadow: #34b38a 1px 0 10px;">Theater</h4>
     </div>
 </div>
 
 <!-- Single item -->
 <div class="carousel-item">
-    <img    src="{{asset('images/grund.jpg')}}" 
-            class="d-block w-100" 
-            alt="Sunset Over the City"
-            style="height:25rem"/>
-    <div class="carousel-caption d-none d-md-block">
-        <h5 class="bg-transparent bg-gradient">Grund</h5>
-    </div>
+  <img  src="{{asset('images/grund.jpg')}}" 
+        class="d-block w-100" 
+        alt="Sunset Over the City" 
+        style="height:25rem"/>
+  <div class="carousel-caption text-start bottom-0">
+      <h4 style="text-shadow: #34b38a 2px 2px 2px 2px;">Grund</h4>
+  </div>
 </div>
 
 <!-- Single item -->
+
 <div class="carousel-item">
-    <img    src="{{asset('images/hamilius.jpg')}}" 
-            class="d-block w-100" 
-            alt="Sunset Over the City"
-            style="height:25rem"/>
-    <div class="carousel-caption d-none d-md-block">
-        <h5 class="bg-transparent bg-gradient">Hamilius</h5>
-    </div>
+  <img  src="{{ asset('images/hamilius.jpg') }}" 
+        class="d-block w-100" 
+        alt="Sunset Over the City" 
+        style="height:25rem">
+  <div class="carousel-caption position-absolute top-0 end-0">
+    <h4 style="text-shadow: #34b38a 1px 0 10px;">Hamilius</h4>
+  </div>
 </div>
     <!-- Inner -->
   
