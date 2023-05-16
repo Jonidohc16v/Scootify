@@ -3,7 +3,7 @@
 
 
 <!-- Carousel wrapper -->
-<div id="carouselBasicExample" class="carousel slide carousel-fade" data-mdb-ride="carousel" style=" margin: 2rem auto; width:60rem">
+<div id="carouselBasicExample" class="carousel slide carousel-fade" data-mdb-ride="carousel" style=" margin: 2rem auto; width:60%">
     <h2>Discover Our stations
         <br> all over Luxembourg
     </h2>

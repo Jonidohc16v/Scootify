@@ -1,11 +1,11 @@
 <div class="card bg-dark text-white " style="width:70%; margin:auto; margin-top:2rem">
-    <img src="https://mdbcdn.b-cdn.net/img/new/slides/017.webp" class="card-img" alt="Stony Beach"/>
+    <img src="https://mdbcdn.b-cdn.net/img/new/slides/017.webp" class="card-img" alt="Scootify ride"/>
     <div class="card-img-overlay">
-      <h5 class="card-title">Card title</h5>
+      <h1 class="card-title">SCOOTIFY</h1>
       <p class="card-text">
-        This is a wider card with supporting text below as a natural lead-in to additional
-        content. This content is a little bit longer.
+        Unleash the adventurer in you <br>
+        rent an e-scooter and explore Luxembourg's hidden gems with ease. <br>
+        Book now and get ready to ride into a thrilling urban adventure!
       </p>
-      <p class="card-text">Last updated 3 mins ago</p>
     </div>
   </div>
