@@ -1,4 +1,4 @@
-<div class="card bg-dark text-white">
+<div class="card bg-dark text-white " style="width:70%; margin:auto; margin-top:2rem">
     <img src="https://mdbcdn.b-cdn.net/img/new/slides/017.webp" class="card-img" alt="Stony Beach"/>
     <div class="card-img-overlay">
       <h5 class="card-title">Card title</h5>
