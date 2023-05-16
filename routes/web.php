@@ -26,3 +26,7 @@ Route::get('/index', function () {
 Route::get('/price', function() {
     return view('price');
 });
+
+Route::get('/contactus', function() {
+    return view('contactus');
+});
