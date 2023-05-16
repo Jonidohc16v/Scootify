@@ -25,7 +25,6 @@
       type="text/javascript"
       src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.3.0/mdb.min.js">
     </script>
-
 <style>
 
     body{
@@ -34,10 +33,12 @@
     }
     
     /*Code to change color of active link*/
-    .navbar-nav .active a { 
-        color: #34b38a;
+    .navbar-nav li a {
+    color: black;
     }
-  
+    .navbar-nav li.active a {
+    color: #34b38a;
+    }
 </style>
 
 </head>
@@ -79,21 +80,21 @@
 
         <!-- Left links -->
         <ul class="navbar-nav d-flex align-items-center mx-auto mb-2 mb-lg-0" style="gap: 4rem">
-          <li class="nav-item disable">
+          <li class="nav-item">
             <a class="nav-link" href="/how-it-works">
               <span class="material-symbols-outlined">
                 electric_scooter
               </span> <br>
               HOW IT WORKS?</a>
           </li>
-          <li class="nav-item disable">
+          <li class="nav-item">
             <a class="nav-link" href="/price">
               <span class="material-symbols-outlined">
                 credit_card
               </span><br>
               PRICE</a>
           </li>
-          <li class="nav-item disable">
+          <li class="nav-item">
             <a class="nav-link" href="/stations">
               <span class="material-symbols-outlined">
                 location_on
@@ -104,12 +105,20 @@
         <!-- Left links -->
 
         <div class="ms-auto d-flex align-items-center">
-          <button type="button" class="btn btn-primary me-3" style="background-color: #34b38a">
+          <a href="/login">
+            <button type="button" 
+                  class="btn btn-primary me-3" 
+                  style="background-color: #34b38a">
             <i class="fa-solid fa-user"> </i> Login
-          </button>
-          <button type="button" class="btn btn-primary me-3" style="background-color: #34b38a">
+            </button>
+          </a>
+          <a href="/contactus">
+            <button type="button" 
+                  class="btn btn-primary me-3" 
+                  style="background-color: #34b38a">
             <i class="fa-solid fa-phone"> </i> Contact Us
-          </button>
+            </button>
+          </a>
         </div>
 
       </div>
@@ -178,7 +187,7 @@
       <!-- Instagram -->
       <a
         class="btn btn-link btn-floating btn-lg text-dark m-1"
-        href="#!"
+        href="https://www.instagram.com/scootify.lux/"
         role="button"
         data-mdb-ripple-color="dark"
         ><i class="fab fa-instagram"></i
@@ -202,7 +211,7 @@
   $(document).ready(function() {
     "use strict";
   
-    $('ul.navbar-nav > li').click(function(e) {
+    $('ul.navbar-nav > li').onclick(function(e) {
       e.preventDefault();
       $('ul.navbar-nav > li').removeClass('active');
       $(this).addClass('active');
