@@ -27,15 +27,11 @@
     </script>
 
 <style>
-    nav{
+    body{
         font-family: 'Play', sans-serif;
         text-align: center;
     }
-
-    body{
-        font-family: 'Play', sans-serif;
-        
-    }
+    
     /*Code to change color of active link*/
     .navbar-nav .active a { 
         color: #34b38a;
