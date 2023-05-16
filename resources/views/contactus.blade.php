@@ -3,6 +3,10 @@
 <!--Section: Contact v.2-->
 <section class="mb-6" style="width:55rem ; margin:5rem auto 5rem; padding: 2rem; box-shadow: 0 0 20px #34b38a">
 
+    <div style="margin-y:20rem; background-color:#68d0b0">
+        <img src="/images/logo-1.png" style="width: 6rem">
+    </div>
+
     <!--Section heading-->
     <h2 class="h1-responsive font-weight-bold text-center my-4">Contact us</h2>
     <!--Section description-->
