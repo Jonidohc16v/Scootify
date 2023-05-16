@@ -27,15 +27,17 @@
     </script>
 
 <style>
+
     body{
         font-family: 'Play', sans-serif;
         text-align: center;
     }
-
+    
     /*Code to change color of active link*/
     .navbar-nav .active a { 
         color: #34b38a;
     }
+  
 </style>
 
 </head>
@@ -117,10 +119,20 @@
     <!-- Container wrapper -->
   </nav>
   <!-- Navbar -->
+
+
   <main>
 
     {{$slot}}
+
   </main>
+
+<!-- CARD -->
+
+ 
+
+
+
   <footer class="mt-auto">
 
 <section class="w-100">
@@ -141,7 +153,7 @@
     
     <div class="text-center d-flex justify-content-between" style="background-color: rgba(0, 0, 0, 0.2);" >
   
-    <section class="p-2"><p><img src="{{asset('images/logo-1.png')}}" class="rounded" style="width:40px;" alt="logo"></p></section>
+    <section class="p-2"><a href="/"><img src="{{asset('images/logo-1.png')}}" class="rounded" style="width:40px;" alt="logo"></a></section>
 
     <section class="p-1 text-center p-100">
       <!-- Facebook -->
