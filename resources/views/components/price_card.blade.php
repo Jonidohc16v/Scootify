@@ -71,9 +71,11 @@
             </div>          
         </div>
         <section style="padding:1%">
-          <button type="button" class="btn btn-primary mb-3" style="background-color: #34b38a">
-            <i class="fa-solid fa-user"> </i> Subscribe
-          </button>
+          <a href="/register">
+            <button type="button" class="btn btn-primary mb-3" style="background-color: #34b38a">
+              <i class="fa-solid fa-user"> </i> Subscribe
+            </button>
+          </a>
         </section>        
     </body>
 </html>

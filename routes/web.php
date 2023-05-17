@@ -31,11 +31,9 @@ Route::get('/price', function() {
     return view('price');
 });
 
-
 Route::get('/faq', function(){
     return view('faq');
 });
-
 
 Route::get('/contactus', function() {
 
