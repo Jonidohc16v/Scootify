@@ -1,15 +1,15 @@
 <x-layout>
     <!--Section: Contact v.2-->
     <section class="mb-6" style="width: 70%; margin: 5rem auto 5rem; padding: 2rem; box-shadow: 0 0 20px #34b38a">
-      <div style="margin-y: 20rem; background-color: #68d0b0">
-        <img src="/images/logo-1.png" style="width: 6rem">
+      <div style="margin-y: 20rem; background-color: #34b38a">
+        <img src="/images/logo-1.png" style="width: 6rem; border-radius:50%">
       </div>
   
       <!--Section heading-->
       <h2 class="h1-responsive font-weight-bold text-center my-4">Contact us</h2>
       <!--Section description-->
       <p class="text-center w-responsive mx-auto mb-5">Do you have any questions? Please do not hesitate to contact us directly.
-        Our team will come back to you within a matter of hours to help you.</p>
+        Our team will come back to you as soon as possible.</p>
   
       <div class="row">
         <!--Grid column-->
@@ -22,7 +22,7 @@
               <div class="col-md-6">
                 <div class="md-form mb-0">
                   <input type="text" id="name" name="name" class="form-control">
-                  <label for="name" class="">Your name</label>
+                  <label for="name" class="">Your Full Name</label>
                 </div>
               </div>
               <!--Grid column-->
