@@ -5,8 +5,9 @@
     margin: 0 auto; 
     max-width: 100%; 
     padding: 0 20px; 
-    /*position: relative;
 }
+    /*position: relative;
+
 
 .btn-reg {
     position: absolute;

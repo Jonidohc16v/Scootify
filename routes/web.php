@@ -40,9 +40,6 @@ Route::get('/contactus', function() {
     return view('contactus');
 });
 
-
-
-
 // Show Register/Create Form
 Route::get('/register', [UserController::class, 'create'])->middleware('guest');
 
