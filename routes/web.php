@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,11 +14,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
 /*HELLO WORLD!*/
+
 
 Route::get('/', function () {
     return view('welcome');
 });
+
 
 Route::get('/index', function () {
     return view('index');
@@ -37,3 +41,10 @@ Route::get('/contactus', function() {
 
     return view('contactus');
 });
+
+// Show Register/Create Form
+Route::get('/register', [UserController::class, 'create'])->middleware('guest');
+
+// Show Login Form
+Route::get('/login', [UserController::class, 'login'])->name('login')->middleware('guest');
+
