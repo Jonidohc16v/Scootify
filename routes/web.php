@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\ContactUs;
+use App\Http\Controllers\ContactUsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -31,7 +33,8 @@ Route::get('/faq', function(){
     return view('faq');
 });
 
-Route::get('/contactus', function() {
+//contactUs form
+Route::get('/contactus', [ContactUsController::class, 'create']);
 
-    return view('contactus');
-});
+//contactUs sendig message
+Route::post('/contactus', [ContactUsController::class, 'store']);

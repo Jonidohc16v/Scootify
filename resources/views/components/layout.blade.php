@@ -25,7 +25,7 @@
       type="text/javascript"
       src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.3.0/mdb.min.js">
     </script>
-<style>
+    <style>
     body{
         font-family: 'Play', sans-serif;
         text-align: center;
@@ -38,7 +38,7 @@
     .navbar-nav li.active a {
     color: #34b38a;
     }
-</style>
+    </style>
 
 </head>
 
@@ -216,6 +216,10 @@
       $(this).addClass('active');
     });
   });
+
+  setTimeout(function() {
+    $('#flashMessage').fadeOut('slow');
+  }, 3000);
 </script>
 </body>
 </html>
