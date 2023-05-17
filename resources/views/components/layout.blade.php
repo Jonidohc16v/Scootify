@@ -50,7 +50,7 @@
     <!-- Container wrapper -->
     <div class="container-fluid">
       <!-- Navbar brand -->
-      <a class="navbar-brand me-5" href="/">
+      <a class="navbar-brand me-5" href="/index">
         <img
           src="{{asset('images/logo.png')}}"
           height="90rem"
@@ -161,7 +161,7 @@
     
     <div class="text-center d-flex justify-content-between" style="background-color: rgba(0, 0, 0, 0.2);" >
   
-    <section class="p-2"><a href="/"><img src="{{asset('images/logo-1.png')}}" class="rounded" style="width:40px;" alt="logo"></a></section>
+    <section class="p-2"><a href="/index"><img src="{{asset('images/logo-1.png')}}" class="rounded" style="width:40px;" alt="logo"></a></section>
 
     <section class="p-1 text-center p-100">
       <!-- Facebook -->
