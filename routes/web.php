@@ -37,3 +37,7 @@ Route::get('/contactus', function() {
 
     return view('contactus');
 });
+
+Route::get('/how-it-works', function(){
+    return view('how-it-works');
+});

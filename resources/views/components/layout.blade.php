@@ -195,7 +195,7 @@
 
       <!-- Back to top button -->
       <section class="p-2">
-        <button type="button" class="btn btn-danger btn-floating btn-lg d-flex" id="btn-back-to-top">
+        <button type="button" class="btn btn-danger btn-floating btn-lg d-flex shadow-none" id="btn-back-to-top" style="background-color:black; opacity:0.7;">
             <i class="fas fa-arrow-up"></i>
         </button>
 </section>
