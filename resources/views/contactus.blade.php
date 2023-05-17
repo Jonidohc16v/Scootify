@@ -62,7 +62,15 @@
             <!--Grid row-->
   
             <div class="text-center text-md-left mt-4">
-              <button class="btn btn-primary" style="background-color: #34b38a" type="submit">Send</button>
+              <button class="btn btn-primary" style="background-color: #34b38a" type="submit"> 
+                <section style="display: flex; justify-content:space-between">
+                  <span style="font-size: 1rem"> Send </span>
+                  <span class="material-symbols-outlined">
+                    send
+                  </span> 
+                </section>
+                                            
+              </button>
             </div>
             <div class="status"></div>
           </form>
