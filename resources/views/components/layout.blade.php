@@ -195,7 +195,7 @@
 
       <!-- Back to top button -->
       <section class="p-2">
-        <button type="button" class="btn btn-danger btn-floating btn-lg d-flex" id="btn-back-to-top">
+        <button type="button" class="btn btn-danger btn-floating btn-lg d-flex shadow-none" id="btn-back-to-top" style="background-color:black; opacity:0.7;">
             <i class="fas fa-arrow-up"></i>
         </button>
 </section>
@@ -216,6 +216,34 @@
       $(this).addClass('active');
     });
   });
+
+
+//Get the button
+let mybutton = document.getElementById("btn-back-to-top");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function () {
+scrollFunction();
+};
+
+function scrollFunction() {
+if (
+document.body.scrollTop > 20 ||
+document.documentElement.scrollTop > 20
+) {
+mybutton.style.display = "block";
+} else {
+mybutton.style.display = "none";
+}
+}
+// When the user clicks on the button, scroll to the top of the document
+mybutton.addEventListener("click", backToTop);
+
+function backToTop() {
+document.body.scrollTop = 0;
+document.documentElement.scrollTop = 0;
+}
+
 </script>
 </body>
 </html>

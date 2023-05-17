@@ -40,9 +40,16 @@ Route::get('/contactus', function() {
     return view('contactus');
 });
 
+
+
+
 // Show Register/Create Form
 Route::get('/register', [UserController::class, 'create'])->middleware('guest');
 
 // Show Login Form
 Route::get('/login', [UserController::class, 'login'])->name('login')->middleware('guest');
+
+Route::get('/how-it-works', function(){
+    return view('how-it-works');
+});
 
