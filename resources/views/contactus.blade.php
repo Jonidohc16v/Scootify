@@ -73,7 +73,9 @@
         <div class="col-lg-3 col-md-12 text-center">
           <ul class="list-unstyled mb-0">
             <li><i class="fas fa-map-marker-alt fa-2x"></i>
-              <p>7 Porte de France, L-4360 ESCH-SUR-ALZETTE, Luxembourg</p>
+              <p>7 Porte de France, <br>
+                L-4360 ESCH-SUR-ALZETTE, <br>
+                Luxembourg</p>
             </li>
 
                 <li><i class="fas fa-phone mt-4 fa-2x"></i>
