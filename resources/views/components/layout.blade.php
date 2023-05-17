@@ -25,7 +25,7 @@
       type="text/javascript"
       src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.3.0/mdb.min.js">
     </script>
-<style>
+    <style>
     body{
         font-family: 'Play', sans-serif;
         text-align: center;
@@ -38,7 +38,7 @@
     .navbar-nav li.active a {
     color: #34b38a;
     }
-</style>
+    </style>
 
 </head>
 
@@ -218,6 +218,11 @@
   });
 
 
+  setTimeout(function() {
+    $('#flashMessage').fadeOut('slow');
+  }, 3000);
+
+
 //Get the button
 let mybutton = document.getElementById("btn-back-to-top");
 
@@ -243,6 +248,7 @@ function backToTop() {
 document.body.scrollTop = 0;
 document.documentElement.scrollTop = 0;
 }
+
 
 </script>
 </body>
