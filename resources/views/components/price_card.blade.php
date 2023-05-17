@@ -38,7 +38,7 @@
         <main style="text-align:center">
             {{$slot}}
         </main>
-        <div class="row row-cols-1 row-cols-md-3 g-4 container-fluid" style="height:30rem; width: 60%; margin: 2rem auto">
+        <div class="row row-cols-1 row-cols-md-3 g-4 container-fluid" style="height:30rem; width: 60%; margin: 1rem auto">
             <div class="col">
               <div class="card h-100" style="box-shadow: 0 0 20px #34b38a">
                 <div class="card-body" style="margin-top: 45%; text-align:center">
@@ -70,8 +70,10 @@
               </div>
             </div>          
         </div>
-        <button type="button" class="btn btn-primary me-3" style="background-color: #34b38a">
+        <section style="padding:1%">
+          <button type="button" class="btn btn-primary mb-3" style="background-color: #34b38a">
             <i class="fa-solid fa-user"> </i> Subscribe
-        </button>
+          </button>
+        </section>        
     </body>
 </html>
