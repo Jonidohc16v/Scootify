@@ -55,6 +55,6 @@ Route::get('/contactus', [ContactUsController::class, 'create']);
 Route::post('/contactus', [ContactUsController::class, 'store']);
 
     return view('contactus');
-});
+
 
 
