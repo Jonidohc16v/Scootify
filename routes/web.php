@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\GoogleController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -17,7 +19,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// map 
-Route::get('/map', function () {
-    return view('map');
-});
+
+
+// google
+
+Route::get('stations', [GoogleController::class, 'index']);
