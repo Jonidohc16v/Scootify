@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,6 +24,7 @@
       type="text/javascript"
       src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.3.0/mdb.min.js">
     </script>
+
     <style>
     body{
         font-family: 'Play', sans-serif;
@@ -103,41 +103,39 @@
         </ul>
         <!-- Left links -->
 
+        <!-- Logout button -->
         <div class="ms-auto d-flex align-items-center">
-          <a href="/login">
-            <button type="button" 
-                  class="btn btn-primary me-3" 
-                  style="background-color: #34b38a">
-            <i class="fa-solid fa-user"> </i> Login
-            </button>
-          </a>
+          @auth
+            <a href="/user">
+              <span class="font-bold uppercase" style="color: black">
+              Welcome {{auth()->user()->name}}
+              </span>
+            </a>
+            <form class="inline" method="POST" action="/logout">
+              @csrf
+              <button type="submit"
+                    class="btn btn-primary me-3" 
+                    style="background-color: #9b2b1e">>
+                    <i class="fa-solid fa-door-closed"></i>
+                    Log Out
+              </button>
+            </form>          
+          @else
+            <a href="/login">
+              <button type="button" 
+                    class="btn btn-primary me-3" 
+                    style="background-color: #34b38a">
+                    <i class="fa-solid fa-user"> </i> Login
+              </button>
+            </a>
+          @endauth
 
-          <!-- Logout button -->
-          <ul class="flex space-x-6 mr-6 text-lg">
-                @auth
-                <li>
-                    <span class="font-bold uppercase">
-                        Welcome {{auth()->user()->name}}
-                    </span>
-                </li>
-                
-                <li>
-                    <form class="inline" method="POST" action="/logout">
-                        @csrf
-                        <button type="submit">
-                            <i class="fa-solid fa-door-closed"></i>
-                            Log Out
-                        </button>
-                    </form>
-                </li>
-                @endauth
-            </ul>
           <a href="/contactus">
             <button type="button" 
-                  class="btn btn-primary me-3" 
-                  style="background-color: #34b38a">
+                 class="btn btn-primary me-3" 
+                 style="background-color: #34b38a">
             <i class="fa-solid fa-phone"> </i> Contact Us
-            </button>
+             </button>
           </a>
         </div>
 
@@ -146,23 +144,18 @@
 
     </div>
     <!-- Container wrapper -->
-  </nav>
+</nav>
   <!-- Navbar -->
 
 
-  <main>
+<main>
 
-    {{$slot}}
+  {{$slot}}
 
-  </main>
-
-
-
- 
+</main>
 
 
-
-  <footer class="mt-auto">
+<footer class="mt-auto">
 
 <section class="w-100">
   <!-- Footer -->
