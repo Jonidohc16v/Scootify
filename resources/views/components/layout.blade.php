@@ -111,6 +111,27 @@
             <i class="fa-solid fa-user"> </i> Login
             </button>
           </a>
+
+          <!-- Logout button -->
+          <ul class="flex space-x-6 mr-6 text-lg">
+                @auth
+                <li>
+                    <span class="font-bold uppercase">
+                        Welcome {{auth()->user()->name}}
+                    </span>
+                </li>
+                
+                <li>
+                    <form class="inline" method="POST" action="/logout">
+                        @csrf
+                        <button type="submit">
+                            <i class="fa-solid fa-door-closed"></i>
+                            Log Out
+                        </button>
+                    </form>
+                </li>
+                @endauth
+            </ul>
           <a href="/contactus">
             <button type="button" 
                   class="btn btn-primary me-3" 

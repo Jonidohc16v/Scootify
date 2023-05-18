@@ -43,6 +43,7 @@ Route::get('/register', [UserController::class, 'create'])->middleware('guest');
 // Show Login Form
 Route::get('/login', [UserController::class, 'login'])->name('login')->middleware('guest');
 
+
 Route::get('/how-it-works', function(){
     return view('how-it-works');
 });
@@ -53,6 +54,13 @@ Route::get('/contactus', [ContactUsController::class, 'create']);
 //contactUs sendig message
 Route::post('/contactus', [ContactUsController::class, 'store']);
 
+
+  
+ // Create New User
+Route::post('/register', [UserController::class, 'store']);
+
+// Create New User
+Route::post('/logout', [UserController::class, 'logout'])->middleware('auth');
 
 
 
