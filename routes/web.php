@@ -62,5 +62,8 @@ Route::post('/register', [UserController::class, 'store']);
 // Create New User
 Route::post('/logout', [UserController::class, 'logout'])->middleware('auth');
 
+// Log In User
+Route::post('/login', [UserController::class, 'authenticate']);
+
 
 

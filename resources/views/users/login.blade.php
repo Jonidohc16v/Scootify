@@ -16,6 +16,7 @@
         <div class="col-lg-9 col-md-12 mb-md-0 mb-5 mx-auto">
           <form id="logIn-form" name="logIn-form" action="/login" method="POST">
         </div>
+        @csrf
             
   
             <!--Email-->
@@ -23,7 +24,7 @@
               <div class="col-md-6 ">
                 <div class="md-form mb-0">
                     <label for="email" class="d-flex flex-column align-items-center text-align-center justify-content-center">Email</label>
-                    <input type="text" id="email" name="email" class="form-control " style="width:100% padding:30px">
+                    <input type="text" id="email" name="email" class="form-control" style="width: 100%;">
                 </div>
               </div>
             </div>
@@ -34,7 +35,7 @@
               <div class="col-md-6 ">
                     <div class="md-form mb-0">
                         <label for="password" class="d-flex flex-column align-items-center text-align-center justify-content-center">Password</label>
-                        <input type="password" id="password" name="password" class="form-control" style="width: 100%">
+                        <input type="password" id="password" name="password" class="form-control" style="width: 100%;">
                     </div>
                 </div>
             </div>
@@ -51,6 +52,7 @@
             <div class="card-footer text-center">
                 <p style="padding-top:15px">Still not a member? <a href="register">Sign Up</a></p>
             </div>
+          </form>
         </div>
     </section>
 </x-layout>
