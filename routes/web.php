@@ -3,7 +3,12 @@
 use App\Http\Controllers\ContactUs;
 use App\Http\Controllers\ContactUsController;
 use Illuminate\Support\Facades\Route;
+
+
+
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\GoogleController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -62,5 +67,7 @@ Route::post('/register', [UserController::class, 'store']);
 // Create New User
 Route::post('/logout', [UserController::class, 'logout'])->middleware('auth');
 
+// google
+Route::get('stations', [GoogleController::class, 'index']);
 
 
