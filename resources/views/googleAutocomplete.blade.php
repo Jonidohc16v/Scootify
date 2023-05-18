@@ -66,6 +66,7 @@
                 <div>
                   <h3>${name}</h3>
                   <p>ID: ${id}</p>
+                  <p>address: ${address}</p>
                   <p>Latitude: ${lat}</p>
                   <p>Longitude: ${lon}</p>
                   <p>capacity: ${capacity}</p>
