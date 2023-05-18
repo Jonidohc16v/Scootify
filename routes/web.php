@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\ContactUs;
+use App\Http\Controllers\ContactUsController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 
@@ -35,18 +37,26 @@ Route::get('/faq', function(){
     return view('faq');
 });
 
-Route::get('/contactus', function() {
-
-    return view('contactus');
-});
-
 // Show Register/Create Form
 Route::get('/register', [UserController::class, 'create'])->middleware('guest');
 
 // Show Login Form
 Route::get('/login', [UserController::class, 'login'])->name('login')->middleware('guest');
 
-// Create New User
+
+Route::get('/how-it-works', function(){
+    return view('how-it-works');
+});
+
+//contactUs form
+Route::get('/contactus', [ContactUsController::class, 'create']);
+
+//contactUs sendig message
+Route::post('/contactus', [ContactUsController::class, 'store']);
+
+
+  
+ // Create New User
 Route::post('/register', [UserController::class, 'store']);
 
 // Create New User
