@@ -18,11 +18,16 @@ class UserController extends Controller
         $formFields = $request->validate([
             'name' => ['required', 'min:3'],
             'email' => ['required', 'email', Rule::unique('users', 'email')],
-            'password' => 'required|confirmed|min:6'
+            'password' => 'required|confirmed|min:6',
+            'phone_number' => 'required|numeric',
+            'address' => ['required', 'min:8'],
         ]);
 
         // Hash Password
         $formFields['password'] = bcrypt($formFields['password']);
+         
+        // Set admin as null
+         $formFields['isAdmin'] = 0;
 
         // Create User
         $user = User::create($formFields);
@@ -30,7 +35,7 @@ class UserController extends Controller
         // Login
         auth()->login($user);
 
-        return redirect('/')->with('message', 'User created and logged in');
+        return redirect('/index')->with('message', 'User created and logged in');
     }
 
     // Logout User
@@ -40,7 +45,7 @@ class UserController extends Controller
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 
-        return redirect('/')->with('message', 'You have been logged out!');
+        return redirect('/index')->with('message', 'You have been logged out!');
 
     }
 
@@ -59,7 +64,7 @@ class UserController extends Controller
         if(auth()->attempt($formFields)) {
             $request->session()->regenerate();
 
-            return redirect('/')->with('message', 'You are now logged in!');
+            return redirect('/index')->with('message', 'You are now logged in!');
         }
 
         return back()->withErrors(['email' => 'Invalid Credentials'])->onlyInput('email');

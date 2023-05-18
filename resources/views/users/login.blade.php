@@ -1,35 +1,9 @@
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Scootify - Your Daily Ride !</title>
-
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Play&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <!-- MDB -->
-    <link
-    href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.3.0/mdb.min.css"
-    rel="stylesheet"
-    />
-
-    <!-- MDB -->
-    <script
-      type="text/javascript"
-      src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.3.0/mdb.min.js">
-    </script>
-
+<x-layout>
      <!--Log In -->
      <section class="mb-6" style="width: 70%; margin: 5rem auto 5rem; padding: 2rem; box-shadow: 0 0 20px #34b38a">
       <div style="margin-y: 20rem; background-color: #68d0b0">
-        <img src="" style="width: 6rem">
+        <img src="/images/logo-1.png" style="width: 6rem; border-radius:50%">
       </div>
   
       <!--heading-->
@@ -40,7 +14,7 @@
       <div class="row">
         
         <div class="col-lg-9 col-md-12 mb-md-0 mb-5 mx-auto">
-          <form id="logIn-form" name="logIn-form" action="#" method="POST">
+          <form id="logIn-form" name="logIn-form" action="/login" method="POST">
         </div>
             
   
@@ -79,3 +53,4 @@
             </div>
         </div>
     </section>
+</x-layout>

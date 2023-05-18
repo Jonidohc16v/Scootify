@@ -46,3 +46,11 @@ Route::get('/register', [UserController::class, 'create'])->middleware('guest');
 // Show Login Form
 Route::get('/login', [UserController::class, 'login'])->name('login')->middleware('guest');
 
+// Create New User
+Route::post('/register', [UserController::class, 'store']);
+
+// Create New User
+Route::post('/logout', [UserController::class, 'logout'])->middleware('auth');
+
+
+
