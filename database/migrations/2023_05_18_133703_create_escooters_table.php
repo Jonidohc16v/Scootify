@@ -11,14 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('stations', function (Blueprint $table) {
+        Schema::create('escooters', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id');
-            $table->string('name');
-            $table->integer('location');
-            $table->integer('capacity');
+            $table->float('lat');
+            $table->float('lon');
+            $table->integer('battery_level');
+            $table->integer('status');
+            $table->foreignId('ride_id');
             $table->timestamps();
         });
+        
     }
 
     /**
@@ -26,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('stations');
+        Schema::dropIfExists('escooters');
     }
 };
