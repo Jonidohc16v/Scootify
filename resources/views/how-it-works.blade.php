@@ -6,16 +6,7 @@
     max-width: 100%; 
     padding: 0 20px; 
 }
-    /*position: relative;
-
-
-.btn-reg {
-    position: absolute;
-    top:80%;
-    left: 43%;
-    transform: translateX(-50%);
-}
-*/
+ 
 
 .carousel-caption .btn-primary {
     background-color: rgb(52, 179, 138);
