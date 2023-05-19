@@ -22,7 +22,7 @@
               <div class="col-md-6">
                 <div class="md-form mb-0">
                     <label for="name" class="">Full Name</label>
-                    <input type="text" id="name" name="name" class="form-control">
+                    <input type="text" id="name" name="name" value="{{old('name')}}" class="form-control">
                     @error('name')
                     <p class="text-danger text-sm mt-1">{{$message}}</p>
                     @enderror
@@ -34,7 +34,7 @@
               <div class="col-md-6">
                 <div class="md-form mb-0">
                     <label for="phone_number" class="">Phone Number</label>
-                    <input type="text" id="phone_number" name="phone_number" class="form-control">
+                    <input type="text" id="phone_number" name="phone_number" value="{{old('phone_number')}}" class="form-control">
                     @error('phone_number')
                     <p class="text-danger text-sm mt-1">{{$message}}</p>
                     @enderror
@@ -48,7 +48,7 @@
               <div class="col-md-12">
                 <div class="md-form mb-0">
                     <label for="email" class="">Email</label>
-                    <input type="text" id="email" name="email" class="form-control">
+                    <input type="text" id="email" name="email" value="{{old('email')}}" class="form-control">
                     @error('email')
                     <p class="text-danger text-sm mt-1">{{$message}}</p>
                     @enderror
@@ -87,7 +87,7 @@
                 <div class="col-md-12">
                     <div class="md-form mb-0">
                         <label for="address" class="">Address</label>
-                        <input type="text" id="address" name="address" class="form-control">
+                        <input type="text" id="address" name="address" value="{{old('address')}}" class="form-control">
                         @error('address')
                         <p class="text-danger text-sm mt-1">{{$message}}</p>
                         @enderror

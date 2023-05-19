@@ -24,7 +24,12 @@
               <div class="col-md-6 ">
                 <div class="md-form mb-0">
                     <label for="email" class="d-flex flex-column align-items-center text-align-center justify-content-center">Email</label>
-                    <input type="text" id="email" name="email" class="form-control" style="width: 100%;">
+                    <input type="text" id="email" name="email" value="{{old('email')}}" class="form-control" style="width: 100%;">
+                    <!-- Error for the email -->
+                    @error('email')
+                      <p class="text-danger text-sm mt-1">{{$message}}</p>
+                    @enderror
+                    
                 </div>
               </div>
             </div>
@@ -36,6 +41,10 @@
                     <div class="md-form mb-0">
                         <label for="password" class="d-flex flex-column align-items-center text-align-center justify-content-center">Password</label>
                         <input type="password" id="password" name="password" class="form-control" style="width: 100%;">
+                        <!-- Error for the password -->
+                        @error('password')
+                          <p class="text-danger text-sm mt-1">{{$message}}</p>
+                        @enderror
                     </div>
                 </div>
             </div>
