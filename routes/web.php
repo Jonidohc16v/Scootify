@@ -60,6 +60,7 @@ Route::get('/contactus', [ContactUsController::class, 'create']);
 Route::post('/contactus', [ContactUsController::class, 'store']);
 
 
+
   
  // Create New User
 Route::post('/register', [UserController::class, 'store']);
@@ -69,5 +70,11 @@ Route::post('/logout', [UserController::class, 'logout'])->middleware('auth');
 
 // google
 Route::get('stations', [GoogleController::class, 'index']);
+
+// User Page
+Route::get('/user', function(){
+    return view('users/user');
+});
+
 
 
