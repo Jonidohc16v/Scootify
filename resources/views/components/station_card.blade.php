@@ -96,7 +96,7 @@
             class="d-block w-100" 
             alt="Sunset Over the City"
             style="height:25rem"/>
-    <div class="carousel-caption d-none d-md-block">
+    <div class="carousel-caption text-end top-0">
         <h4 style="text-shadow: #34b38a 1px 0 10px;">Theater</h4>
     </div>
 </div>
