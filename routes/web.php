@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\GoogleController;
+use App\Http\Controllers\AdminController;
 
 
 /*
@@ -65,7 +66,7 @@ Route::post('/contactus', [ContactUsController::class, 'store']);
  // Create New User
 Route::post('/register', [UserController::class, 'store']);
 
-// Create New User
+// Create logout
 Route::post('/logout', [UserController::class, 'logout'])->middleware('auth');
 
 
@@ -81,5 +82,9 @@ Route::get('/user', function(){
 // Log In User
 Route::post('/login', [UserController::class, 'authenticate']);
 
+// Show Register/Create Form for the admin 
+Route::get('/register/admin', [AdminController::class, 'create'])->middleware('guest');
 
+// Create New Admin
+Route::post('/register/admin', [AdminController::class, 'storeAdmin']);
 

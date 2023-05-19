@@ -60,7 +60,7 @@
          <!-- End log In button-->
             <div class="card-footer text-center">
                 <p style="padding-top:15px">Still not a member? <a href="register">Sign Up</a></p>
-            </div>
+            </div>  
           </form>
         </div>
     </section>
