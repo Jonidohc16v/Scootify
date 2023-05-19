@@ -68,6 +68,7 @@ Route::post('/register', [UserController::class, 'store']);
 // Create New User
 Route::post('/logout', [UserController::class, 'logout'])->middleware('auth');
 
+
 // google
 Route::get('stations', [GoogleController::class, 'index']);
 
@@ -75,6 +76,10 @@ Route::get('stations', [GoogleController::class, 'index']);
 Route::get('/user', function(){
     return view('users/user');
 });
+
+  
+// Log In User
+Route::post('/login', [UserController::class, 'authenticate']);
 
 
 
