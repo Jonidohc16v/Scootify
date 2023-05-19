@@ -10,6 +10,11 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\GoogleController;
 
 
+
+
+
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -82,4 +87,11 @@ Route::get('/user', function(){
 Route::post('/login', [UserController::class, 'authenticate']);
 
 
+/////// EDIT ////////////
 
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('edit',[UserController::class,'index'])->name('edit');
+    Route::post('edit/{user}',[UserController::class,'update'])->name('edit.update');
+  });
+    
