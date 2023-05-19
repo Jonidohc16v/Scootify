@@ -54,6 +54,9 @@ Route::get('/contactus', [ContactUsController::class, 'create']);
 //contactUs sendig message
 Route::post('/contactus', [ContactUsController::class, 'store']);
 
-
+// User Page
+Route::get('/user', function(){
+    return view('users/user');
+});
 
 
