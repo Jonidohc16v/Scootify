@@ -51,9 +51,9 @@ class User extends Authenticatable
      * @return int
      */
     public static function getUserCount()
-    {
-        return self::count();
-    }
+{
+    return self::where('isAdmin', '<>', 1)->count();
+}
 
 
 
