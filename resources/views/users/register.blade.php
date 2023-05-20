@@ -1,5 +1,6 @@
 <x-layout>
 
+
    <div>
         <section class="mb-6" style="width: 70%; margin: 5rem auto 5rem; padding: 2rem; box-shadow: 0 0 20px #34b38a">
             <div style="margin-y: 20rem; background-color: #34b38a">
@@ -113,5 +114,5 @@
         </div>   
     </section>
 </div>
-
+ 
 </x-layout>

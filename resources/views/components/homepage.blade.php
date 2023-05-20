@@ -28,7 +28,7 @@ electric_scooter
             sports_martial_arts
           </span>
     <h5 class="card-title">Users</h5>
-    <p class="card-text">363</p>
+    <p class="card-text">{{ \App\Models\User::getUserCount() }}</p>
   </div>
 </div>
 </div>

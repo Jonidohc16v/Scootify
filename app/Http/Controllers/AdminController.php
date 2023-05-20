@@ -35,7 +35,7 @@ class AdminController extends Controller
         // Login
         auth()->login($admin);
 
-        return redirect('/index')->with('message', 'User created and logged in');
+        return redirect('/index')->with('message', 'Admin created and logged in');
     }
 
    

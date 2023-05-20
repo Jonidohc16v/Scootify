@@ -42,6 +42,7 @@
 
 </head>
 
+
 <body class="d-flex flex-column min-vh-100">
 
 
@@ -146,6 +147,7 @@
     <!-- Container wrapper -->
 </nav>
   <!-- Navbar -->
+<x-flash-message />
 
 
 <main>
@@ -156,6 +158,7 @@
 
 
 <footer class="mt-auto">
+
 
 <section class="w-100">
   <!-- Footer -->
@@ -233,7 +236,8 @@
 
 
   setTimeout(function() {
-    $('#flashMessage').fadeOut('slow');
+    $('#flashMessage').fadeOut('slow'); 
+    $('#userMsg').fadeOut('slow'); 
   }, 3000);
 
 
@@ -265,5 +269,6 @@ document.documentElement.scrollTop = 0;
 
 
 </script>
+
 </body>
 </html>
