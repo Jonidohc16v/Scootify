@@ -70,7 +70,7 @@ class UserController extends Controller
         return back()->withErrors(['email' => 'Invalid Credentials'])->onlyInput('email');
     }
 
-/////////////////////////////////////// EDIT ////////////////////////////////
+// EDIT //
    
 
     public function index()
@@ -80,6 +80,7 @@ class UserController extends Controller
 
     public function update(User $user, Request $request)
     {   
+        
         $user->update([
             'name' => $request->name,
             'email' => $request->email,
@@ -88,9 +89,12 @@ class UserController extends Controller
             'updated_at' => now()
         ]);
 
-     /*    return $this->update('/user','Profile updated successfully!'); */
-      return redirect('/user'); 
+        
+     
+        return redirect('/user')->with('message', 'Updated');
     }
+
+
 
 
 
