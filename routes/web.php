@@ -87,11 +87,12 @@ Route::get('/user', function(){
 Route::post('/login', [UserController::class, 'authenticate']);
 
 
-/////// EDIT ////////////
-
+// EDIT //
 
 Route::middleware(['auth'])->group(function () {
     Route::get('edit',[UserController::class,'index'])->name('edit');
     Route::post('edit/{user}',[UserController::class,'update'])->name('edit.update');
   });
     
+// DELETE //
+
