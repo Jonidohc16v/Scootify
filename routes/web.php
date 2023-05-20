@@ -10,6 +10,11 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\GoogleController;
 
 
+
+
+
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -60,6 +65,7 @@ Route::get('/contactus', [ContactUsController::class, 'create']);
 Route::post('/contactus', [ContactUsController::class, 'store']);
 
 
+
   
  // Create New User
 Route::post('/register', [UserController::class, 'store']);
@@ -67,7 +73,25 @@ Route::post('/register', [UserController::class, 'store']);
 // Create New User
 Route::post('/logout', [UserController::class, 'logout'])->middleware('auth');
 
+
 // google
 Route::get('stations', [GoogleController::class, 'index']);
 
+// User Page
+Route::get('/user', function(){
+    return view('users/user');
+});
 
+  
+// Log In User
+Route::post('/login', [UserController::class, 'authenticate']);
+
+
+/////// EDIT ////////////
+
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('edit',[UserController::class,'index'])->name('edit');
+    Route::post('edit/{user}',[UserController::class,'update'])->name('edit.update');
+  });
+    
