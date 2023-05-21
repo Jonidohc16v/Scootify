@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\GoogleController;
+use App\Http\Controllers\ProductController;
 
 
 
@@ -94,4 +95,9 @@ Route::middleware(['auth'])->group(function () {
     Route::get('edit',[UserController::class,'index'])->name('edit');
     Route::post('edit/{user}',[UserController::class,'update'])->name('edit.update');
   });
+
+
+//   Subscriptions
+Route::get('plans',[ProductController::class,'index'])->name('plans');
+Route::post('/checkout',[ProductController::class,'checkout'])->name('checkout');
     
