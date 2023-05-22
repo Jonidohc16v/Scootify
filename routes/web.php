@@ -11,6 +11,11 @@ use App\Http\Controllers\GoogleController;
 use App\Http\Controllers\AdminController;
 
 
+
+
+
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -85,6 +90,19 @@ Route::post('/login', [UserController::class, 'authenticate']);
 // Show Register/Create Form for the admin 
 Route::get('/register/admin', [AdminController::class, 'create'])->middleware('guest');
 
-// Create New Admin
-Route::post('/register/admin', [AdminController::class, 'storeAdmin']);
+
+// EDIT //
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('edit',[UserController::class,'index'])->name('edit');
+    Route::post('edit/{user}',[UserController::class,'update'])->name('edit.update');
+  });
+    
+// DELETE //
+
+  
+ // Create New Admin
+Route::post('/register/admin', [AdminController::class, 'storeAdmin']); 
+  
+  
 

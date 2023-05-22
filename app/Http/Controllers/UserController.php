@@ -69,4 +69,59 @@ class UserController extends Controller
 
         return back()->withErrors(['email' => 'Invalid Credentials'])->onlyInput('email');
     }
+
+// EDIT //
+   
+
+
+
+
+
+public function index()
+{
+    return view('/users/edit');
+}
+
+public function update(User $user, Request $request)
+{
+    $user->update([
+        'name' => $request->name,
+        'email' => $request->email,
+        'address' => $request->address,
+        'phone_number' => $request->phone_number,
+        'updated_at' => now()
+    ]);
+
+            if($user->update()){
+
+
+
+                return redirect('/user')->with('message', 'Updated');
+            }
+    
+
+    
+    
+}
+
+
+
+/*
+if($user->update()){
+        $isDirty = true;
+        
+    } else {
+        $isDirty = false;
+    }
+    
+
+    if ($isDirty) {
+        return redirect('/user')->with('message', 'Updated');   
+    } else {    
+        return redirect('/user')->with('message', 'Not updated');     
+    }
+*/
+
+
+
 }

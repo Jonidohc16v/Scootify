@@ -79,7 +79,7 @@
       <div class="collapse navbar-collapse" id="navbarButtonsExample">
 
         <!-- Left links -->
-        <ul class="navbar-nav d-flex align-items-center mx-auto mb-2 mb-lg-0" style="gap: 4rem">
+        <ul class="navbar-nav d-flex align-items-center mx-auto mb-2 mb-lg-0" style="gap: 4rem;">
           <li class="nav-item">
             <a class="nav-link" href="/how-it-works">
               <span class="material-symbols-outlined">
@@ -108,7 +108,7 @@
         <div class="ms-auto d-flex align-items-center">
           @auth
             <a href="/user">
-              <span class="font-bold uppercase" style="color: black">
+              <span class="font-bold uppercase" style="color: black; margin-right:35px;">
               Welcome {{auth()->user()->name}}
               </span>
             </a>
@@ -266,6 +266,11 @@ function backToTop() {
 document.body.scrollTop = 0;
 document.documentElement.scrollTop = 0;
 }
+
+
+
+document.querySelector('#btn').disabled=true;
+
 
 
 </script>

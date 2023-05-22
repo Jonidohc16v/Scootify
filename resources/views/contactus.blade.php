@@ -27,8 +27,11 @@
               <!--Grid column-->
               <div class="col-md-6">
                 <div class="md-form mb-0">
-                  <input type="text" id="name" name="name" class="form-control">
                   <label for="name" class="">Your Full Name</label>
+                  <input type="text" id="name" name="name" value="{{old('name')}}" class="form-control">                  
+                  @error('name')
+                      <p style="color: red">The name is required</p>
+                  @enderror
                 </div>
               </div>
               <!--Grid column-->
@@ -36,8 +39,11 @@
               <!--Grid column-->
               <div class="col-md-6">
                 <div class="md-form mb-0">
-                  <input type="text" id="email" name="email" class="form-control">
                   <label for="email" class="">Your email</label>
+                  <input type="text" id="email" name="email" value="{{old('email')}}" class="form-control">
+                  @error('email')
+                      <p style="color: red">The e-mail is required</p>
+                  @enderror
                 </div>
               </div>
               <!--Grid column-->
@@ -48,8 +54,11 @@
             <div class="row">
               <div class="col-md-12">
                 <div class="md-form mb-0">
-                  <input type="text" id="subject" name="subject" class="form-control">
                   <label for="subject" class="">Subject</label>
+                  <input type="text" id="subject" name="subject" value="{{old('subject')}}" class="form-control">
+                  @error('subject')
+                      <p style="color: red">The message needs a subject</p>
+                  @enderror
                 </div>
               </div>
             </div>
@@ -60,8 +69,11 @@
               <!--Grid column-->
               <div class="col-md-12">
                 <div class="md-form">
-                  <textarea type="text" id="message" name="message" rows="2" class="form-control md-textarea"></textarea>
                   <label for="message">Your message</label>
+                  <textarea type="text" id="message" name="message" rows="2" class="form-control md-textarea"></textarea>
+                  @error('message')
+                      <p style="color: red">You need a message</p>
+                  @enderror
                 </div>
               </div>
             </div>
