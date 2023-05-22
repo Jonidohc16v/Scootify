@@ -14,23 +14,44 @@ class ContactEmail extends Mailable
     use Queueable, SerializesModels;
 
     public $name;
-    public $email;
-    public $message;
+    public $message; 
+
     /**
      * Create a new message instance.
-     * @return void
-    */
-    public function __construct($name, $email, $message){
+     */
+    public function __construct($name, $message)
+    {
         $this->name = $name;
-        $this->email = $email;
         $this->message = $message;
     }
+
     /**
-     * Build the message.
+     * Get the message envelope.
+     */
+    public function envelope(): Envelope
+    {
+        return new Envelope(
+            subject: 'Contact Email',
+        );
+    }
+
+    /**
+     * Get the message content definition.
+     */
+    public function content(): Content
+    {
+        return new Content(
+            markdown: 'email.conatctus',
+        );
+    }
+
+    /**
+     * Get the attachments for the message.
      *
-     * @return $this
-    */
-    public function build(){
-        return $this->subject($this->message);
+     * @return array<int, \Illuminate\Mail\Mailables\Attachment>
+     */
+    public function attachments(): array
+    {
+        return [];
     }
 }
