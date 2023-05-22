@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('escooters', function (Blueprint $table) {
             $table->id();
-            $table->integer('location');
+            $table->foreignId('stations_id');
             $table->integer('battery_level');
             $table->integer('status');
             $table->foreignId('ride_id');
