@@ -16,6 +16,10 @@
           <span class="material-symbols-outlined" style="font-size:3rem;">
           ev_station
           </span>
+
+    <h5 class="card-title">Users</h5>
+    <p class="card-text">{{ \App\Models\User::getUserCount() }}</p>
+
           <h5 class="card-title">Stations</h5>
           <p class="card-text">5</p>
         </a>
@@ -45,6 +49,7 @@
           <p class="card-text">363</p>
       </div>
     </div>
+
 
   </div>
 </div>

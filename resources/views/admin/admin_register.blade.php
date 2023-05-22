@@ -1,6 +1,5 @@
 <x-layout>
 
-
    <div>
         <section class="mb-6" style="width: 70%; margin: 5rem auto 5rem; padding: 2rem; box-shadow: 0 0 20px #34b38a">
             <div style="margin-y: 20rem; background-color: #34b38a">
@@ -8,14 +7,14 @@
             </div>
   
       <!--heading-->
-      <h2 class="h1-responsive font-weight-bold text-center my-4">Sign Up</h2>
+      <h2 class="h1-responsive font-weight-bold text-center my-4">Admin Sign Up</h2>
       <!--description-->
-      <p class="text-center w-responsive mx-auto mb-5">Register in order to have all our services.</p>
+      <p class="text-center w-responsive mx-auto mb-5">Register to be an Admin.</p>
   
       <div class="row">
         <!--Grid column-->
         <div class="col-lg-9 col-md-12 mb-md-0 mb-5 mx-auto">
-          <form id="register-form" name="register-form" action="/register" method="POST">
+          <form id="register-form" name="register-form" action="/register/admin" method="POST">
             @csrf
   
             <!--Full Name-->
@@ -108,11 +107,11 @@
 
     
             <div class="card-footer text-center">
-                <p style="padding-top:15px">Are you a member? <a href="login">Sign In</a></p>
+                <p style="padding-top:15px">Are you an Admin? <a href="login">Sign In</a></p>
                 <p>By clicking <em>Sign Up</em> you agree to our <a href="#">terms of service</a></p>
             </div>
         </div>   
     </section>
 </div>
- 
+
 </x-layout>
