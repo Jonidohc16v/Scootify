@@ -17,11 +17,10 @@
           ev_station
           </span>
 
-    <h5 class="card-title">Users</h5>
-    <p class="card-text">{{ \App\Models\User::getUserCount() }}</p>
+    
 
           <h5 class="card-title">Stations</h5>
-          <p class="card-text">5</p>
+          <p class="card-text">6</p>
         </a>
       </div>
     </div>
@@ -46,7 +45,7 @@
               sports_martial_arts
           </span>
           <h5 class="card-title">Users</h5>
-          <p class="card-text">363</p>
+          <p class="card-text">{{ \App\Models\User::getUserCount() }}</p>
       </div>
     </div>
 
