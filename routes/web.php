@@ -8,7 +8,12 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\GoogleController;
+
+
+
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\PlanController;
+
 
 
 
@@ -97,6 +102,11 @@ Route::middleware(['auth'])->group(function () {
     Route::get('edit',[UserController::class,'index'])->name('edit');
     Route::post('edit/{user}',[UserController::class,'update'])->name('edit.update');
   });
+
+
+
+
+
     
 // DELETE //
 
@@ -104,5 +114,13 @@ Route::middleware(['auth'])->group(function () {
  // Create New Admin
 Route::post('/register/admin', [AdminController::class, 'storeAdmin']); 
   
-  
+
+//   Subscriptions//   
+Route::middleware("auth")->group(function () {
+Route::get('plans',[PlanController::class,'index'])->name('plans');
+Route::post('/checkout/{plan_id}', [PlanController::class, 'checkout'])->name('checkout');
+Route::get('/success',[PlanController::class,'success'])->name('checkout.success');
+Route::get('/checkout',[PlanController::class,'checkout'])->name('checkout.cancel');
+});
+
 
