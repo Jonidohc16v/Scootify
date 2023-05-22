@@ -77,10 +77,16 @@
                             <!-- End Phone Number-->
 
                             <!--Button-->
+
+
+
+
                             <div class="text-center text-md-left mt-4">
-                                <button class="btn btn-primary" style="background-color: #34b38a" type="submit">Save
+                                <button class="btn btn-primary" id="btn" style="background-color: #34b38a" type="submit">Save
                                     Changes</button>
                                     
+
+
                                 <a href="/user" class="btn btn-primary" style="background-color: #34b38a"
                                     type="submit">Cancel</a>
                             </div>
@@ -98,5 +104,9 @@
 
         </form>
     </div>
+  
+
+
+
 
 </x-layout>

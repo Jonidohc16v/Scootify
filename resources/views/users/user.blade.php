@@ -22,11 +22,33 @@ account_circle
     <p class="card-text">{{auth()->user()->email}}</p>
     <p class="card-text">{{auth()->user()->address}}</p>
     <p class="card-text">{{auth()->user()->phone_number}}</p>
-    <a href="/edit" class="btn btn-primary" style="background-color: #34b38a">Edit</a>
     
-    @endauth
+    
+  <div class="d-flex flex-row justify-content-center gap-5">
 
-    {{-- DELETE --}}
+    {{-- PICK A TROTINETTE --}}
+
+    <form action="" method="">
+
+      @csrf
+    <a href="/stations" class="btn btn-success mt-3" role="button">Pick a Scooter</a>
+   
+  </form>
+
+    {{-- MY PLANS BTN --}}
+
+    <form action="" method="">
+
+      @csrf
+    <a href="/plans" class="btn btn-info mt-3" role="button">Buy Plan</a>
+   
+  </form>
+
+  {{-- EDIT USER --}}
+
+  <a href="/edit" class="btn btn-primary mt-3" style="background-color: #34b38a">Edit</a>
+
+    {{-- DELETE BTN --}}
 
     <form action="" method="">
 
@@ -35,6 +57,10 @@ account_circle
 
     </form>
     
+    @endauth
+
+
+    </div>
   </div>
 </div>
 
