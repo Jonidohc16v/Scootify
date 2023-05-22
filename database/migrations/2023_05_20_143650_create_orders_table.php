@@ -9,14 +9,13 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up(): void
+    public function up()
     {
-        Schema::create('escooters', function (Blueprint $table) {
+        Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('stations_id');
-            $table->integer('battery_level');
-            $table->integer('status');
-            $table->foreignId('ride_id');
+            $table->string('status');
+            $table->integer('total_price');
+            $table->string('session_id');
             $table->timestamps();
         });
     }
@@ -26,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('escooters');
+        Schema::dropIfExists('orders');
     }
 };
