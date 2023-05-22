@@ -71,9 +71,7 @@ Route::get('/contactus', [ContactUsController::class, 'create']);
 Route::post('/contactus', [ContactUsController::class, 'store']);
 
 
-
-  
- // Create New User
+// Create New User
 Route::post('/register', [UserController::class, 'store']);
 
 // Create logout

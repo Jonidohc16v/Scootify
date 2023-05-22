@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\ContactUs;
 use App\Mail\ContactEmail;
+use App\Models\ContactUs;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 
@@ -22,11 +22,13 @@ class ContactUsController extends Controller
             'message' => 'required'
         ]);
 
+        $name = $formFields['name'];
+        $message = $formFields['message'];
+        Mail::to('scootify.lu@gmail.com')->send(new ContactEmail($name, $message));
+
         ContactUs::create($formFields);
         return redirect()->back()->with(
             'success', 'Thank you for contacting us, we will get back to you ASAP!'
-        );
-
-        Mail::to('scootify.lu@gmail.com')->send(new ContactEmail($formFields['name'], $formFields['email'], $formFields['message']));
+        );       
     }
 }

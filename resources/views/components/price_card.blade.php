@@ -1,4 +1,5 @@
 <div class="row row-cols-1 row-cols-md-3 g-4 container-fluid" style="height:30rem; width: 60%; margin: 1rem auto">
+
   <div class="col">
      <div class="card h-100" style="box-shadow: 0 0 20px #34b38a">
        <div class="card-body" style="margin-top: 45%; text-align:center">
@@ -37,3 +38,4 @@
    </button>
  </a>
 </section>   
+
