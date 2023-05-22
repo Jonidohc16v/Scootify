@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('status');
             $table->integer('total_price');
             $table->string('session_id');
-            $table->timestamp('ends_at')->nullable();
+            $table->dateTime('ends_at')->nullable();
             $table->timestamps();
         });
     }

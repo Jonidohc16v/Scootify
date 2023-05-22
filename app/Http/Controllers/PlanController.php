@@ -29,6 +29,7 @@ class PlanController extends Controller
 
     $planId = $request->input('plan_id');
     $plan = Plan::find($planId);
+    // dd($plan['ends_at']);
 
     if (!$plan) {
         throw new NotFoundHttpException('Plan not found.');
@@ -61,13 +62,15 @@ class PlanController extends Controller
     }
     // $userId = $request->input('user_id');
     // $user = User::find($userId);
-  
+
+    // if (now()> 
 
     $subscription = new Subscription();
     $subscription->user_id = $user['id'];
     $subscription->status = 'unpaid';
     $subscription->total_price = $price;
     $subscription->session_id = $checkout_session->id;
+    $subscription->ends_at = now()->addDays($plan['ends_at']);
     $subscription->save();
 
     return redirect($checkout_session->url);
@@ -106,5 +109,7 @@ class PlanController extends Controller
         }
         
     }
+
+
 
 };
