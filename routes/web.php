@@ -8,7 +8,12 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\GoogleController;
+
+
+
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\PlanController;
+
 
 
 
@@ -71,7 +76,7 @@ Route::post('/contactus', [ContactUsController::class, 'store']);
  // Create New User
 Route::post('/register', [UserController::class, 'store']);
 
-// Create New User
+// Create logout
 Route::post('/logout', [UserController::class, 'logout'])->middleware('auth');
 
 
@@ -87,15 +92,28 @@ Route::get('/user', function(){
 // Log In User
 Route::post('/login', [UserController::class, 'authenticate']);
 
+// Show Register/Create Form for the admin 
+Route::get('/register/admin', [AdminController::class, 'create'])->middleware('guest');
 
-/////// EDIT ////////////
 
+// EDIT //
 
 Route::middleware(['auth'])->group(function () {
     Route::get('edit',[UserController::class,'index'])->name('edit');
     Route::post('edit/{user}',[UserController::class,'update'])->name('edit.update');
   });
 
+
+
+
+
+    
+// DELETE //
+
+  
+ // Create New Admin
+Route::post('/register/admin', [AdminController::class, 'storeAdmin']); 
+  
 
 //   Subscriptions//   
 Route::middleware("auth")->group(function () {
@@ -104,3 +122,5 @@ Route::post('/checkout/{plan_id}', [PlanController::class, 'checkout'])->name('c
 Route::get('/success',[PlanController::class,'success'])->name('checkout.success');
 Route::get('/checkout',[PlanController::class,'checkout'])->name('checkout.cancel');
 });
+
+

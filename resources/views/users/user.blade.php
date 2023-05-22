@@ -1,21 +1,66 @@
 <x-layout>
 
-<style>
 
+{{-- Update message --}}                   
+              <div id="flashMessage">
+                    @if(session()->has('message'))
+                    <div class="alert alert-success">
+                        {{ session()->get('message') }}
+                    </div>
+                @endif
+              </div>
 
-</style>
-                    <!-- User Info -->
+ <!-- User Info -->
 
 <div class="card mt-5 m-auto" style="width:65%; box-shadow: 0 0 20px #34b38a;">
   <div class="card-body">
   @auth
+  <span class="material-symbols-outlined" style="font-size:5rem;">
+account_circle
+</span>
     <p class="card-title" style="font-size:2rem;"><h3>{{auth()->user()->name}}</h3></p>
     <p class="card-text">{{auth()->user()->email}}</p>
     <p class="card-text">{{auth()->user()->address}}</p>
     <p class="card-text">{{auth()->user()->phone_number}}</p>
-    <a href="/edit" class="btn btn-primary" style="background-color: #34b38a">Edit</a>
+    
+    
+  <div class="d-flex flex-row justify-content-center gap-5">
+
+    {{-- PICK A TROTINETTE --}}
+
+    <form action="" method="">
+
+      @csrf
+    <a href="/stations" class="btn btn-success mt-3" role="button">Pick a Scooter</a>
+   
+  </form>
+
+    {{-- MY PLANS BTN --}}
+
+    <form action="" method="">
+
+      @csrf
+    <a href="/plans" class="btn btn-info mt-3" role="button">Buy Plan</a>
+   
+  </form>
+
+  {{-- EDIT USER --}}
+
+  <a href="/edit" class="btn btn-primary mt-3" style="background-color: #34b38a">Edit</a>
+
+    {{-- DELETE BTN --}}
+
+    <form action="" method="">
+
+        @csrf
+      <button type="submit" class="btn btn-danger mt-3">Delete</button>
+
+    </form>
+    
     @endauth
-  
+
+
+    </div>
   </div>
 </div>
 
@@ -51,5 +96,12 @@
     </div>
   </div>
 </div>
+
+
+<script>
+setTimeout(function() {
+  $('#flashMessage').fadeOut('slow');
+}, 3000);
+</script>
 
 </x-layout>
