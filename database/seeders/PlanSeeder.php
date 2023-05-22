@@ -2,18 +2,18 @@
 
 namespace Database\Seeders;
 
-use App\Models\Product;
+use App\Models\Plan;
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
-class ProductSeeder extends Seeder
+class PlanSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run()
     {
-        $products = [
+        $plans = [
             [
                 'name' => 'Daily', 
                 'price' => 5, 
@@ -31,8 +31,8 @@ class ProductSeeder extends Seeder
             ]
         ];
   
-        foreach ($products as $product) {
-            Product::create($product);
+        foreach ($plans as $plan) {
+            Plan::create($plan);
         }
     }
-    }
+}

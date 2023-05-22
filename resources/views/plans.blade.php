@@ -156,30 +156,32 @@
 
 
 
-    <div class="row row-cols-1 row-cols-md-3 g-4 container-fluid" style="height:30rem; width: 60%; margin: 1rem auto">
-        @foreach($products as $product)
-        <div class="col">
-            <div class="card h-100" style="box-shadow: 0 0 20px #34b38a" onclick="selectCard(this)">
-                <div class="card-body" style="margin-top: 45%; text-align:center">
-                    <h2 class="card-title pb-3"><b>{{ $product->name }}</b></h2>
-                    <h5>{{ $product->description }}</h5>
-                    <p style="font-size:4rem">{{ $product->price }}€</p>
-                    <hr style="font-size: 1rem; border:1px solid #34b38a;">
+    
+        <div class="row row-cols-1 row-cols-md-3 g-4 container-fluid" style="height:30rem; width: 60%; margin: 1rem auto">
+            @foreach($plans as $plan)
+            <div class="col">
+                <div class="card h-100" style="box-shadow: 0 0 20px #34b38a" onclick="selectCard({{ $plan->id }})">
+                    <div class="card-body" style="margin-top: 45%; text-align:center">
+                        <h2 class="card-title pb-3"><b>{{ $plan->name }}</b></h2>
+                        <h5>{{ $plan->description }}</h5>
+                        <p style="font-size:4rem">{{ $plan->price }}€</p>
+                        <hr style="font-size: 1rem; border:1px solid #34b38a;">
+                        
+                        <form action="{{ route('checkout', ['plan_id' => $plan->id]) }}" method="POST">
+                          @csrf
+                          <input type="hidden" name="plan_id" value="{{ $plan->id }}">
+                          <button type="submit">Checkout</button>
+                      </form>
+                    </div>
                 </div>
+                
             </div>
+            @endforeach
         </div>
-        @endforeach
-    </div>
+        <p id="error-message" style="color: red; display: none;">Please select a subscription option.</p>
+        <br>
     
-    <form action="{{route('checkout')}}" method="POST">
-    @csrf
-    <button id="checkout-button" onclick="checkout()">Checkout</button>
-    </form>
-    
-    
-    <p id="error-message" style="color: red; display: none;">Please select a subscription option.</p>
-    
-    <br>
+
 </main>
 
 
@@ -292,27 +294,17 @@
         }
         
     // script for the subscriptions
-    let selectedCard = null;
+     function selectCard(planId) {
+            document.getElementsByName('plan_id')[0].value = planId;
+        }
 
-function selectCard(card) {
-    if (selectedCard !== null) {
-        selectedCard.classList.remove("selected");
+    function checkout() {
+        if (document.getElementById('plan_id').value === '') {
+            alert('Please select a product before proceeding to checkout.');
+        } else {
+            document.getElementById('checkout-button').type = 'submit';
+        }
     }
-
-    selectedCard = card;
-    selectedCard.classList.add("selected");
-}
-
-function checkout() {
-    if (selectedCard !== null) {
-        // Perform the checkout process here, e.g., redirect to payment page
-        console.log("Selected card:", selectedCard);
-        // Replace the console.log statement with the actual checkout code
-    } else {
-        // Show error message if no card is selected
-        document.getElementById("error-message").style.display = "block";
-    }
-}
 </script>
 
 </body>
