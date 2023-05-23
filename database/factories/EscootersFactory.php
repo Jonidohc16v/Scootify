@@ -25,7 +25,8 @@ class EscootersFactory extends Factory
             'stations_id' => $this->faker->numberBetween(1, 6),
             'battery_level' => $this->faker->numberBetween(0, 100),
             'status' => $this->faker->randomElement([0, 1]),
-            'ride_id' => $this->faker->numberBetween(0, 1000),
+            'ride_id' =>null
+        
         ];
     }
 }

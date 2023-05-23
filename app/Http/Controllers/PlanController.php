@@ -122,3 +122,6 @@ public function success(Request $request)
     return redirect('/user')->with('success', 'Payment successful' . " " . $user->name);
 }
 };
+
+
+
