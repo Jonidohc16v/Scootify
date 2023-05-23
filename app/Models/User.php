@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use App\Models\Subscription;
 
 class User extends Authenticatable
 {
@@ -55,6 +56,10 @@ class User extends Authenticatable
     return self::where('isAdmin', '<>', 1)->count();
 }
 
+public function subscriptions()
+{
+    return $this->hasMany(Subscription::class);
+}
 
 
 }
