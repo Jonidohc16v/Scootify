@@ -31,7 +31,7 @@ account_circle
     <form action="" method="">
 
       @csrf
-    <a href="/stations" class="btn btn-success mt-3" role="button">Rent</a>
+    <a href="/stations" class="btn btn-success mt-3" role="button">Ride</a>
    
   </form>
 
