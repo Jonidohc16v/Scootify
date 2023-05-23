@@ -9,6 +9,7 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
+
 class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
@@ -52,13 +53,13 @@ class User extends Authenticatable
      * @return int
      */
     public static function getUserCount()
-{
+    {
     return self::where('isAdmin', '<>', 1)->count();
-}
+    }
 
-public function subscriptions(){
-    return $this->hasMany(Subscription::class);
-}
+    public function subscriptions(){
+        return $this->hasMany(Subscription::class);
+    }
 
 
 }
