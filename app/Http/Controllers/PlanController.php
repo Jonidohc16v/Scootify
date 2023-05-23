@@ -120,5 +120,8 @@ public function success(Request $request)
     $user = User::findOrFail($subscription->user_id);
 
     return redirect('/user')->with('success', 'Payment successful' .$user->name);
+
 }
-}
+
+};
+
