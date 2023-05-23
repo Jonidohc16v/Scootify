@@ -62,10 +62,18 @@ class UserController extends Controller
             'password' => 'required'
         ]);
 
-        if(auth()->attempt($formFields)) {
+        if (auth()->attempt($formFields)) {
             $request->session()->regenerate();
-
-            return redirect('/index')->with('message', 'You are now logged in!');
+    
+            $user = auth()->user();
+    
+            if ($user->isAdmin == 1) {
+                // Admin message
+                return redirect('/index')->with('message', 'You are now logged in as an admin!');
+            } else {
+                // User message
+                return redirect('/index')->with('message', 'You are now logged in!');
+            }
         }
 
         return back()->withErrors(['email' => 'Invalid Credentials'])->onlyInput('email');
