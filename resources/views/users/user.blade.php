@@ -1,5 +1,11 @@
 <x-layout>
+  <style>
 
+
+
+
+  </style>
+  
 
 {{-- Update message --}}                   
               <div id="flashMessage">
@@ -75,7 +81,7 @@ account_circle
   <div class="row">
     <div class="col-6">
       <div class="card" style="height: 400px; box-shadow: 0 0 20px #34b38a">
-        <div class="card-body">
+        <div class="card-body d-flex flex-column">
           <h5 class="card-title" style="font-size: 2rem;">My Journeys</h5>
           <ul class="card-text" style="list-style-type:none;">
             <li></li>
@@ -88,10 +94,10 @@ account_circle
 
     <div class="col-6">
       <div class="card" style="height: 400px; box-shadow: 0 0 20px #34b38a">
-        <div class="card-body">
-          <h5 class="card-title" style="font-size: 2rem;">My Payments</h5>
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title mb-3" style="font-size: 2rem;">My Payments</h5>
 
-          <table>
+          <table> 
          
             @forelse(auth()->user()->subscriptions as $subscription)
             
@@ -107,7 +113,7 @@ account_circle
                         <td>{{ $subscription->plan->name }}</td>
                         <td>{{ substr($subscription->created_at, 0, 10) }}</td>
                         <td>{{substr($subscription->ends_at, 0, 10)}}</td>
-                        
+                 
                     </tr>
                 </tbody>
             

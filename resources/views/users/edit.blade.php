@@ -97,6 +97,8 @@
                         </form>
                     </div>
 
+                   
+
 
 
                 </div>
@@ -104,15 +106,46 @@
 
         </form>
     </div>
-  
+    
+
 <script>
+    const form = document.querySelector("#formAccountSettings");
+    const formButton = document.querySelector("#btn");
 
+    
+    const initvalues = {
+        name: "{{ auth()->user()->name }}",
+        email: "{{ auth()->user()->email }}",
+        address: "{{ auth()->user()->address }}",
+        phone_number: "{{ auth()->user()->phone_number }}"
+    };
 
+    formButton.disabled = true;
 
+    form.addEventListener("keyup", buttonState);
 
-/* document.querySelector('#btn').disabled=true; */
+    function buttonState() {
+        const nameInput = document.querySelector("#name");
+        const emailInput = document.querySelector("#email");
+        const addressInput = document.querySelector("#address");
+        const phoneNumberInput = document.querySelector("#phone_number");
 
+        if (
+            nameInput.value === initvalues.name &&
+            emailInput.value === initvalues.email &&
+            addressInput.value === initvalues.address &&
+            phoneNumberInput.value === initvalues.phone_number
+        ) {
+            formButton.disabled = true;
+        } else {
+            formButton.disabled = false;
+        }
+    }
 </script>
+
+
+
+
 
 
 
