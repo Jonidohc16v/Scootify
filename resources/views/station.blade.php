@@ -1,55 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
+<x-layout>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <h1>sta</h1>
 
-    <!-- Include polyfill library for browser compatibility -->
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-
-    <title>Scootify Stations</title>
-
-    <style>
-        /* CSS styles for map and markers */
-        #map {
-            height: 70%;
-            width: 70%;
-        }
-
-        html,
-        body {
-            height: 100%;
-            margin: 0;
-            padding: 0;
-        }
-
-        .custom-marker {
-            width: 32px;
-            height: 32px;
-        }
-
-        .custom-marker img {
-            width: 100%;
-            height: 100%;
-        }
-
-        img {
-            width: 300px;
-            height: 300px;
-        }
-
-        #search {
-            margin-top: 10px;
-            margin-bottom: 10px;
-            width: 300px;
-
-        }
-    </style>
-</head>
-
-<body>
     <!-- Search input and button -->
     <input type="text" id="search" placeholder="Search for a location">
     <button onclick="searchLocation()">Search</button>
@@ -57,7 +9,7 @@
     <!-- Map container -->
     <div id="map"></div>
 
-    <script>
+    {{-- <script>
         let map;
         let markers = [];
 
@@ -236,13 +188,12 @@
                 }
             });
         }
-    </script>
+    </script> --}}
 
     <!-- Load Google Maps API with the provided key and libraries -->
     <script
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAxuiJOaKoWJuMd77szJL47mfJPiqMT2yM&libraries=places&callback=initMap"
         async defer></script>
     {{-- AIzaSyAxuiJOaKoWJuMd77szJL47mfJPiqMT2yM --}}
-</body>
 
-</html>
+</x-layout>
