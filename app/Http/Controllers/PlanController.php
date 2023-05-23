@@ -109,10 +109,16 @@ public function success(Request $request)
         $plan = $subscription->plan;
 
         // Check if the ends_at date has passed and update the subscription status if necessary
-        if ($subscription->ends_at < Carbon::now()) {
-            $subscription->status = 'unpaid';
-            $subscription->save();
-        }
+        // Check if the ends_at date has passed and update the subscription status if necessary
+            if ($subscription->ends_at < Carbon::now()) {
+            // Check if the subscription has been paid
+                if ($subscription->status === 'paid') {
+        // Subscription has expired but payment has been made, no action needed
+                 } else {
+                     $subscription->status = 'unpaid';
+                     $subscription->save();
+                }
+}
     } catch (Exception $e) {
         throw new NotFoundHttpException();
     }
