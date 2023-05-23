@@ -23,6 +23,18 @@ class PlanController extends Controller
         }
 
         return view('plans', compact('plans','subscriptions'));
+      
+    }
+  
+    public function checkout(Request $request){
+        
+    $stripe = new \Stripe\StripeClient('sk_test_51N9OkhGpvfHZLI7oW2geHeRlvLMnvPOSBMSP4w5bwysPfPksucYk8XDjooQKGf7kxuaUhYx6RBQXPWlOjtUnkdGb00EZSdikfe');
+
+    $planId = $request->input('plan_id');
+    $plan = Plan::find($planId);
+
+    if (!$plan) {
+        throw new NotFoundHttpException('Plan not found.');
     }
 
     public function checkout(Request $request)
@@ -85,11 +97,12 @@ class PlanController extends Controller
         return redirect($checkout_session->url);
     }
 
-public function success(Request $request)
-{
-    $stripe = new \Stripe\StripeClient('sk_test_51N9OkhGpvfHZLI7oW2geHeRlvLMnvPOSBMSP4w5bwysPfPksucYk8XDjooQKGf7kxuaUhYx6RBQXPWlOjtUnkdGb00EZSdikfe');
+
+    public function success(Request $request){
+        $stripe = new \Stripe\StripeClient('sk_test_51N9OkhGpvfHZLI7oW2geHeRlvLMnvPOSBMSP4w5bwysPfPksucYk8XDjooQKGf7kxuaUhYx6RBQXPWlOjtUnkdGb00EZSdikfe');
 
     $sessionId = $request->get('session_id');
+
 
     try {
         $session = $stripe->checkout->sessions->retrieve($sessionId);
@@ -108,6 +121,7 @@ public function success(Request $request)
         // Retrieve the associated plan
         $plan = $subscription->plan;
 
+
         // Check if the ends_at date has passed and update the subscription status if necessary
         if ($subscription->ends_at < Carbon::now()) {
             $subscription->status = 'unpaid';
@@ -117,8 +131,13 @@ public function success(Request $request)
         throw new NotFoundHttpException();
     }
 
+
     $user = User::findOrFail($subscription->user_id);
 
     return redirect('/user')->with('success', 'Payment successful' .$user->name);
 }
 };
+
+    
+
+

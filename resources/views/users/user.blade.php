@@ -88,6 +88,7 @@ account_circle
       <div class="card" style="height: 400px; box-shadow: 0 0 20px #34b38a">
         <div class="card-body">
           <h5 class="card-title" style="font-size: 2rem;">My Payments</h5>
+
           <table>
          
             @forelse(auth()->user()->subscriptions as $subscription)
@@ -111,8 +112,9 @@ account_circle
             @empty
               <p>No subscriptions found</p>
              @endforelse
-
+             
          </table>
+         
         </div>
       </div>
     </div>
