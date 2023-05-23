@@ -85,7 +85,6 @@ Route::get('stations', [GoogleController::class, 'index']);
 Route::get('/user', function(){
     return view('users/user');
 });
-
   
 // Log In User
 Route::post('/login', [UserController::class, 'authenticate']);
@@ -98,7 +97,7 @@ Route::get('/register/admin', [AdminController::class, 'create'])->middleware('g
 
 Route::middleware(['auth'])->group(function () {
     Route::get('edit',[UserController::class,'index'])->name('edit');
-    Route::post('edit/{user}',[UserController::class,'update'])->name('edit.update');
+    Route::post('edit/{user}',[UserController::class,'update'])->name('edit.update');   
   });
 
 

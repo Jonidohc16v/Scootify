@@ -3,11 +3,11 @@
 
 {{-- Update message --}}                   
               <div id="flashMessage">
-                    @if(session()->has('message'))
-                    <div class="alert alert-success">
-                        {{ session()->get('message') }}
-                    </div>
-                @endif
+                    @if(session()->has('success'))
+                      <div class="alert alert-success">
+                          {{ session()->get('success') }}
+                      </div>
+                    @endif
               </div>
 
  <!-- User Info -->
@@ -88,8 +88,8 @@ account_circle
       <div class="card" style="height: 400px; box-shadow: 0 0 20px #34b38a">
         <div class="card-body">
           <h5 class="card-title" style="font-size: 2rem;">My Payments</h5>
-          <ul class="card-text" style="list-style-type:none;">
-            <li></li>
+          <ul class="card-text" style="list-style-type:none;">           
+            <li></li>            
           </ul>
         </div>
       </div>

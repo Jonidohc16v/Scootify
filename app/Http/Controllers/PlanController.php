@@ -23,13 +23,12 @@ class PlanController extends Controller
         return view('plans', compact('plans'));
     }
 
-    public function checkout(Request $request)
-{
+    public function checkout(Request $request){
+        
     $stripe = new \Stripe\StripeClient('sk_test_51N9OkhGpvfHZLI7oW2geHeRlvLMnvPOSBMSP4w5bwysPfPksucYk8XDjooQKGf7kxuaUhYx6RBQXPWlOjtUnkdGb00EZSdikfe');
 
     $planId = $request->input('plan_id');
     $plan = Plan::find($planId);
-    // dd($plan['ends_at']);
 
     if (!$plan) {
         throw new NotFoundHttpException('Plan not found.');
@@ -60,10 +59,7 @@ class PlanController extends Controller
     foreach ($users as $user) {
         User::find($user);
     }
-    // $userId = $request->input('user_id');
-    // $user = User::find($userId);
-
-    // if (now()> 
+    $user = auth()->user();
 
     $subscription = new Subscription();
     $subscription->user_id = $user['id'];
@@ -84,8 +80,9 @@ class PlanController extends Controller
 
         $users = User::all();
         foreach ($users as $user) {
-            User::find($user);
+            User::find($user);     
         }
+        $user = auth()->user();
 
         try{
             $session = $stripe->checkout->sessions->retrieve($sessionId);
@@ -100,16 +97,15 @@ class PlanController extends Controller
                 }
                 $subscription->status ='paid';
                 $subscription->save();
-                return view('user', compact('customer'))->with('success', 'Payment successfull'.$user['name']);
+                //$title = 'Hello';
+                return redirect('/user')->with('success', 'Payment successfull');
                 
-
+                
 
         }catch(Exception $e){
             throw new NotFoundHttpException();
         }
         
     }
-
-
-
-};
+    
+}
