@@ -29,13 +29,28 @@
          <hr style="font-size: 1rem; border:1px solid #34b38a;"> 
        </div>
      </div>
-   </div>          
-</div>
-<section style="padding:1%">
- <a href="/register">
-   <button type="button" class="btn btn-primary mb-3" style="background-color: #34b38a">
-     <i class="fa-solid fa-user"> </i> Subscribe
-   </button>
- </a>
-</section>   
+    </div>          
+  </div>
+  
+  
+  @auth
+  <section style="padding:1%">
+    <a href="/plans">
+      <button type="button" class="btn btn-primary mb-3" style="background-color: #34b38a">
+        <i class="fa-solid fa-user"> </i> Buy Plan
+      </button>
+    </a>
+  </section>  
+
+  @else
+
+  <section style="padding:1%">
+    <a href="/register">
+      <button type="button" class="btn btn-primary mb-3" style="background-color: #34b38a">
+        <i class="fa-solid fa-user"> </i> Subscribe
+      </button>
+    </a>
+  </section>  
+  
+  @endauth
 
