@@ -1,10 +1,5 @@
 <x-layout>
-  <style>
-
-
-
-
-  </style>
+ 
   
 
 {{-- Update message --}}                   
@@ -37,7 +32,7 @@ account_circle
     <form action="" method="">
 
       @csrf
-    <a href="/stations" class="btn btn-success mt-3" role="button">Ride</a>
+    <a href="/ride" class="btn btn-success mt-3" role="button">Ride</a>
    
   </form>
 
