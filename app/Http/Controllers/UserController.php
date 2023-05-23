@@ -73,10 +73,6 @@ class UserController extends Controller
 // EDIT //
    
 
-
-
-
-
 public function index()
 {
     return view('/users/edit');
@@ -106,21 +102,28 @@ public function update(User $user, Request $request)
 
 
 
-/*
-if($user->update()){
-        $isDirty = true;
-        
-    } else {
-        $isDirty = false;
-    }
-    
+// DELETE //
 
-    if ($isDirty) {
-        return redirect('/user')->with('message', 'Updated');   
-    } else {    
-        return redirect('/user')->with('message', 'Not updated');     
-    }
-*/
+public function destroy()
+{
+    
+    $user = auth()->user();
+
+    
+    $user->delete();
+
+   
+    auth()->logout();
+
+    
+    session()->invalidate();
+    session()->regenerateToken();
+
+    return redirect('/')->with('message', 'User deleted successfully');
+}
+
+
+
 
 
 

@@ -56,5 +56,17 @@ class User extends Authenticatable
 }
 
 
+/// DELETE USER ///
+
+use Notifiable;
+
+
+
+public function delete()
+{
+    
+    parent::delete();
+}
+
 
 }

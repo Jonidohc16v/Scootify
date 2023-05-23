@@ -269,7 +269,7 @@ document.documentElement.scrollTop = 0;
 
 
 
-document.querySelector('#btn').disabled=true;
+
 
 
 

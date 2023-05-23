@@ -14,6 +14,10 @@ class PlanController extends Controller
 {
     public function index(Request $request){
 
+
+    
+
+
         $plans = Plan::all();
 
         if (!auth()->check()) {
@@ -21,6 +25,8 @@ class PlanController extends Controller
             // Redirect to the login page or handle as per your application's logic
         }
         return view('plans', compact('plans'));
+
+
     }
 
     public function checkout(Request $request)
@@ -60,10 +66,14 @@ class PlanController extends Controller
     foreach ($users as $user) {
         User::find($user);
     }
+    $user = auth()->user();
     // $userId = $request->input('user_id');
     // $user = User::find($userId);
 
     // if (now()> 
+
+
+
 
     $subscription = new Subscription();
     $subscription->user_id = $user['id'];
@@ -100,7 +110,7 @@ class PlanController extends Controller
                 }
                 $subscription->status ='paid';
                 $subscription->save();
-                return view('user', compact('customer'))->with('success', 'Payment successfull'.$user['name']);
+                return view('users.user', compact('customer'))->with('message', 'Payment successfull'.$user['name']);
                 
 
 
@@ -109,6 +119,11 @@ class PlanController extends Controller
         }
         
     }
+
+  
+    
+       
+    
 
 
 

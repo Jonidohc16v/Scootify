@@ -108,7 +108,12 @@ Route::middleware(['auth'])->group(function () {
     
 // DELETE //
 
-  
+
+Route::delete('/users', [UserController::class, 'destroy'])->name('users.destroy');
+
+
+
+
  // Create New Admin
 Route::post('/register/admin', [AdminController::class, 'storeAdmin']); 
   
@@ -120,5 +125,9 @@ Route::post('/checkout/{plan_id}', [PlanController::class, 'checkout'])->name('c
 Route::get('/success',[PlanController::class,'success'])->name('checkout.success');
 Route::get('/checkout',[PlanController::class,'checkout'])->name('checkout.cancel');
 });
+
+
+
+
 
 
