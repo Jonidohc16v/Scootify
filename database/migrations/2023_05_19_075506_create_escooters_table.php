@@ -16,7 +16,7 @@ return new class extends Migration
             $table->foreignId('stations_id');
             $table->integer('battery_level');
             $table->integer('status');
-            $table->foreignId('ride_id');
+            $table->foreignId('ride_id')->nullable();
             $table->timestamps();
         });
     }
