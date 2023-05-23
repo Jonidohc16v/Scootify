@@ -123,7 +123,7 @@ public function destroy()
     session()->invalidate();
     session()->regenerateToken();
 
-    return redirect('/')->with('message', 'User deleted successfully');
+    return redirect('/index')->with('message', 'User deleted successfully');
 }
 
 
