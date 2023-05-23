@@ -1,11 +1,19 @@
 <x-layout>
     <div class="container-fluid" style="display: flex; height: 30rem;">
         <div style="width: 30%; height: 100%; padding: 1rem;">
+            
+            <form action="/ride" method="POST" style="height: 100%;">
+                @csrf
+                <button type="submit" name="action" value="pickup" class="btn btn-primary me-3" style="background-color: #34b38a">Pickup E-scooter</button>
+                <button type="submit" name="action" value="park" class="btn btn-primary me-3" style="background-color: #34b38a">Park E-scooter</button> 
+               
+            </form>
+            
             <form action="/ride" method="POST" style="height: 100%;">
                 @csrf
                 <label for="start_station">Select starting station</label>
                 <select class="form-select" name="start_station" aria-label="Default select example">
-                    <option selected disabled>Select starting station</option>
+                    <option  selected disabled class="form-control>Select starting station</option>
                     @foreach ($stations as $station)
                         <option value="{{ $station->id }}">{{ $station->name }}</option>
                     @endforeach
@@ -13,13 +21,13 @@
 
                 <label for="end_station">Select destination station</label>
                 <select class="form-select" name="end_station" aria-label="Default select example">
-                    <option selected disabled>Select destination station</option>
+                    <option selected disabled class="form-control>Select destination station</option>
                     @foreach ($stations as $station)
                         <option value="{{ $station->id }}">{{ $station->name }}</option>
                     @endforeach
                 </select>
 
-                <button type="submit">Submit</button>
+                <button type="submit"class="btn btn-primary me-3" style="background-color: #34b38a">Submit</button>
             </form>
         </div>
         <div style="width: 60%; height: 100%; padding: 1rem; overflow-y: auto;">
