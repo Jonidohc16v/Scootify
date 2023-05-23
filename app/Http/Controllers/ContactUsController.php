@@ -23,8 +23,9 @@ class ContactUsController extends Controller
         ]);
 
         $name = $formFields['name'];
+        $email = $formFields['email'];
         $message = $formFields['message'];
-        Mail::to('scootify.lu@gmail.com')->send(new ContactEmail($name, $message));
+        Mail::to('scootify.lu@gmail.com')->send(new ContactEmail($name, $email, $message));
 
         ContactUs::create($formFields);
         return redirect()->back()->with(
