@@ -22,7 +22,7 @@ class PlanController extends Controller
             // Redirect to the login page or handle as per your application's logic
         }
 
-        return view('plans', compact('plans','subscriptions'));
+        return view('plans', compact('plans'));
     }
 
     public function checkout(Request $request)
