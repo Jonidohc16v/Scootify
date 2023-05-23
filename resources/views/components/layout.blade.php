@@ -213,7 +213,7 @@
       <!-- Instagram -->
       <a
         class="btn btn-link btn-floating btn-lg text-dark m-1"
-        href="https://www.instagram.com/scootify.lux/"
+        href="https://instagram.com/scootify.lux?igshid=ZDc4ODBmNjlmNQ=="
         role="button"
         data-mdb-ripple-color="dark"
         ><i class="fab fa-instagram"></i
