@@ -87,6 +87,15 @@
               </span> <br>
               HOW IT WORKS?</a>
           </li>
+          @auth
+          <li class="nav-item">
+            <a class="nav-link" href="/plans">
+              <span class="material-symbols-outlined">
+                credit_card
+              </span><br>
+              PLANS</a>
+          </li>
+          @else
           <li class="nav-item">
             <a class="nav-link" href="/price">
               <span class="material-symbols-outlined">
@@ -94,6 +103,7 @@
               </span><br>
               PRICE</a>
           </li>
+          @endauth
           <li class="nav-item">
             <a class="nav-link" href="/stations">
               <span class="material-symbols-outlined">
