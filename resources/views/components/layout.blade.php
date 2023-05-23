@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,6 +24,7 @@
       type="text/javascript"
       src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.3.0/mdb.min.js">
     </script>
+
     <style>
     body{
         font-family: 'Play', sans-serif;
@@ -41,6 +41,7 @@
     </style>
 
 </head>
+
 
 <body class="d-flex flex-column min-vh-100">
 
@@ -78,7 +79,7 @@
       <div class="collapse navbar-collapse" id="navbarButtonsExample">
 
         <!-- Left links -->
-        <ul class="navbar-nav d-flex align-items-center mx-auto mb-2 mb-lg-0" style="gap: 4rem">
+        <ul class="navbar-nav d-flex align-items-center mx-auto mb-2 mb-lg-0" style="gap: 4rem;">
           <li class="nav-item">
             <a class="nav-link" href="/how-it-works">
               <span class="material-symbols-outlined">
@@ -86,6 +87,15 @@
               </span> <br>
               HOW IT WORKS?</a>
           </li>
+          @auth
+          <li class="nav-item">
+            <a class="nav-link" href="/plans">
+              <span class="material-symbols-outlined">
+                credit_card
+              </span><br>
+              PLANS</a>
+          </li>
+          @else
           <li class="nav-item">
             <a class="nav-link" href="/price">
               <span class="material-symbols-outlined">
@@ -93,6 +103,7 @@
               </span><br>
               PRICE</a>
           </li>
+          @endauth
           <li class="nav-item">
             <a class="nav-link" href="/stations">
               <span class="material-symbols-outlined">
@@ -103,41 +114,39 @@
         </ul>
         <!-- Left links -->
 
+        <!-- Logout button -->
         <div class="ms-auto d-flex align-items-center">
-          <a href="/login">
-            <button type="button" 
-                  class="btn btn-primary me-3" 
-                  style="background-color: #34b38a">
-            <i class="fa-solid fa-user"> </i> Login
-            </button>
-          </a>
+          @auth
+            <a href="/user">
+              <span class="font-bold uppercase" style="color: black; margin-right:35px;">
+              Welcome {{auth()->user()->name}}
+              </span>
+            </a>
+            <form class="inline" method="POST" action="/logout">
+              @csrf
+              <button type="submit"
+                    class="btn btn-primary me-3" 
+                    style="background-color: #9b2b1e">>
+                    <i class="fa-solid fa-door-closed"></i>
+                    Log Out
+              </button>
+            </form>          
+          @else
+            <a href="/login">
+              <button type="button" 
+                    class="btn btn-primary me-3" 
+                    style="background-color: #34b38a">
+                    <i class="fa-solid fa-user"> </i> Login
+              </button>
+            </a>
+          @endauth
 
-          <!-- Logout button -->
-          <ul class="flex space-x-6 mr-6 text-lg">
-                @auth
-                <li>
-                    <span class="font-bold uppercase">
-                        Welcome {{auth()->user()->name}}
-                    </span>
-                </li>
-                
-                <li>
-                    <form class="inline" method="POST" action="/logout">
-                        @csrf
-                        <button type="submit">
-                            <i class="fa-solid fa-door-closed"></i>
-                            Log Out
-                        </button>
-                    </form>
-                </li>
-                @endauth
-            </ul>
           <a href="/contactus">
             <button type="button" 
-                  class="btn btn-primary me-3" 
-                  style="background-color: #34b38a">
+                 class="btn btn-primary me-3" 
+                 style="background-color: #34b38a">
             <i class="fa-solid fa-phone"> </i> Contact Us
-            </button>
+             </button>
           </a>
         </div>
 
@@ -146,23 +155,20 @@
 
     </div>
     <!-- Container wrapper -->
-  </nav>
+</nav>
   <!-- Navbar -->
+<x-flash-message />
 
 
-  <main>
+<main>
 
-    {{$slot}}
+  {{$slot}}
 
-  </main>
-
-
-
- 
+</main>
 
 
+<footer class="mt-auto">
 
-  <footer class="mt-auto">
 
 <section class="w-100">
   <!-- Footer -->
@@ -225,7 +231,6 @@
 </section>
 </footer>
 
-
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script>
   $(document).ready(function() {
@@ -240,7 +245,8 @@
 
 
   setTimeout(function() {
-    $('#flashMessage').fadeOut('slow');
+    $('#flashMessage').fadeOut('slow'); 
+    $('#userMsg').fadeOut('slow'); 
   }, 3000);
 
 
@@ -271,6 +277,12 @@ document.documentElement.scrollTop = 0;
 }
 
 
+
+
+
+
+
 </script>
+
 </body>
 </html>

@@ -3,17 +3,15 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
-use App\Models\Subscription;
-use Laravel\Sanctum\HasApiTokens;
-use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
+use Laravel\Sanctum\HasApiTokens;
 
-
-class User extends Authenticatable
+class Admin extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
-    
+
     /**
      * The attributes that are mass assignable.
      *
@@ -46,32 +44,4 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-
-    /**
-     * Get the total number of users.
-     *
-     * @return int
-     */
-    public static function getUserCount()
-    {
-    return self::where('isAdmin', '<>', 1)->count();
-    }
-
-    public function subscriptions(){
-        return $this->hasMany(Subscription::class);
-    }
-
-/// DELETE USER ///
-
-use Notifiable;
-
-
-
-public function delete()
-{
-    
-    parent::delete();
-}
-
-
 }

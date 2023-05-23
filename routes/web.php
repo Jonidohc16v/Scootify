@@ -3,14 +3,14 @@
 use Illuminate\Http\Request;
 use App\Http\Controllers\ContactUs;
 use Illuminate\Support\Facades\Route;
-
-
-
 use App\Http\Controllers\RideController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\GoogleController;
 use App\Http\Controllers\StationController;
 use App\Http\Controllers\ContactUsController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\PlanController;
+
 
 
 /*
@@ -64,24 +64,66 @@ Route::get('/contactus', [ContactUsController::class, 'create']);
 //contactUs sendig message
 Route::post('/contactus', [ContactUsController::class, 'store']);
 
+
 // Create New User
 Route::post('/register', [UserController::class, 'store']);
 
-// Create New User
+// Create logout
 Route::post('/logout', [UserController::class, 'logout'])->middleware('auth');
+
+
+// User Page
+Route::get('/user', function(){
+    return view('users/user');
+});
+  
+// Log In User
+Route::post('/login', [UserController::class, 'authenticate']);
+
+// Show Register/Create Form for the admin 
+Route::get('/register/admin', [AdminController::class, 'create'])->middleware('guest');
+
+
+// EDIT //
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('edit',[UserController::class,'index'])->name('edit');
+    Route::post('edit/{user}',[UserController::class,'update'])->name('edit.update');   
+  });
+    
+// DELETE //
+
+
+Route::delete('/users', [UserController::class, 'destroy'])->name('users.destroy');
+
+
+
+
+ // Create New Admin
+Route::post('/register/admin', [AdminController::class, 'storeAdmin']); 
+  
+
+//   Subscriptions//   
+Route::middleware("auth")->group(function () {
+Route::get('plans',[PlanController::class,'index'])->name('plans');
+Route::post('/checkout/{plan_id}', [PlanController::class, 'checkout'])->name('checkout');
+Route::get('/success',[PlanController::class,'success'])->name('checkout.success');
+Route::get('/checkout',[PlanController::class,'checkout'])->name('checkout.cancel');
+});
 
 // googlemap
 Route::get('/stations', [GoogleController::class, 'index']);
-
 
 //station 
  Route::get('/station', function(){
      return view('station');
  });
 
-
 Route::get('/ride', [StationController::class, 'index']);
 
 Route::post('/ride', [RideController::class, 'store'])->name('store.ride');
+
+
+
 
 

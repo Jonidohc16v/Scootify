@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Subscription;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 
@@ -69,4 +70,57 @@ class UserController extends Controller
 
         return back()->withErrors(['email' => 'Invalid Credentials'])->onlyInput('email');
     }
+
+// EDIT //
+   
+
+public function index()
+{
+    return view('/users/edit');
+}
+
+public function update(User $user, Request $request)
+{
+    $user->update([
+        'name' => $request->name,
+        'email' => $request->email,
+        'address' => $request->address,
+        'phone_number' => $request->phone_number,
+        'updated_at' => now()
+    ]);
+
+            if($user->update()){
+                return redirect('/user')->with('success', 'Updated');
+            }
+    
+}
+
+
+
+
+// DELETE //
+
+public function destroy()
+{
+    
+    $user = auth()->user();
+
+    
+    $user->delete();
+
+   
+    auth()->logout();
+
+    
+    session()->invalidate();
+    session()->regenerateToken();
+
+    return redirect('/')->with('message', 'User deleted successfully');
+}
+
+
+
+
+
+
 }

@@ -9,15 +9,16 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up(): void
+    public function up()
     {
         Schema::create('subscriptions', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id');
-            $table->integer('start_date');
-            $table->integer('end_date');
-            $table->enum('payment_method', ['card', 'cash']);
-            $table->integer('status');
+            $table->foreignId('user_id')->nullable();
+            $table->foreignId('plan_id')->nullable();
+            $table->string('status');
+            $table->integer('total_price');
+            $table->string('session_id');
+            $table->dateTime('ends_at')->nullable();
             $table->timestamps();
         });
     }
