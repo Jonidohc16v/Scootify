@@ -31,7 +31,7 @@ account_circle
     <form action="" method="">
 
       @csrf
-    <a href="/stations" class="btn btn-success mt-3" role="button">Pick a Scooter</a>
+    <a href="/stations" class="btn btn-success mt-3" role="button">Ride</a>
    
   </form>
 
@@ -47,15 +47,18 @@ account_circle
   {{-- EDIT USER --}}
 
   <a href="/edit" class="btn btn-primary mt-3" style="background-color: #34b38a">Edit</a>
+  
 
     {{-- DELETE BTN --}}
 
-    <form action="" method="">
-
-        @csrf
-      <button type="submit" class="btn btn-danger mt-3">Delete</button>
-
-    </form>
+    <form action="{{ route('users.destroy') }}" method="POST">
+      @csrf
+      @method('DELETE')
+      <button type="submit" class="btn btn-danger mt-3" onclick="return confirm('Are you sure you want to delete your account?')">Delete</button>
+  </form>
+    
+  
+  
     
     @endauth
 
@@ -64,8 +67,7 @@ account_circle
   </div>
 </div>
 
-
-                    <!-- Travels Info -->
+                    <!-- My Journeys -->
 
 
 
@@ -82,7 +84,7 @@ account_circle
       </div>
     </div>
 
-                      <!-- Payments Method -->
+                      <!-- Payments -->
 
     <div class="col-6">
       <div class="card" style="height: 400px; box-shadow: 0 0 20px #34b38a">
