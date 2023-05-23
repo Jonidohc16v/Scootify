@@ -20,4 +20,5 @@ class Plan extends Model
         'price',
         'description'
     ];
+
 }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Subscription;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 
@@ -89,16 +90,11 @@ public function update(User $user, Request $request)
     ]);
 
             if($user->update()){
-
-
-
-                return redirect('/user')->with('message', 'Updated');
+                return redirect('/user')->with('success', 'Updated');
             }
     
-
-    
-    
 }
+
 
 
 
