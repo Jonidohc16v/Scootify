@@ -3,10 +3,12 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+use App\Models\Subscription;
+use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
-use Laravel\Sanctum\HasApiTokens;
+
 
 class User extends Authenticatable
 {
@@ -51,10 +53,13 @@ class User extends Authenticatable
      * @return int
      */
     public static function getUserCount()
-{
+    {
     return self::where('isAdmin', '<>', 1)->count();
-}
+    }
 
+    public function subscriptions(){
+        return $this->hasMany(Subscription::class);
+    }
 
 
 }

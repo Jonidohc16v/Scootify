@@ -3,9 +3,9 @@
 
 {{-- Update message --}}                   
               <div id="flashMessage">
-                    @if(session()->has('message'))
+                    @if(session()->has('success'))
                     <div class="alert alert-success">
-                        {{ session()->get('message') }}
+                        {{ session()->get('success') }}
                     </div>
                 @endif
               </div>
@@ -88,9 +88,33 @@ account_circle
       <div class="card" style="height: 400px; box-shadow: 0 0 20px #34b38a">
         <div class="card-body">
           <h5 class="card-title" style="font-size: 2rem;">My Payments</h5>
-          <ul class="card-text" style="list-style-type:none;">
-            <li></li>
-          </ul>
+
+          <table>
+         
+            @forelse(auth()->user()->subscriptions as $subscription)
+            
+                <thead>
+                    <tr>
+                        <th>Plan Name</th>
+                        <th>Subscribtion Date</th>
+                        <th>Due Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{ $subscription->plan->name }}</td>
+                        <td>{{ substr($subscription->created_at, 0, 10) }}</td>
+                        <td>{{substr($subscription->ends_at, 0, 10)}}</td>
+                        
+                    </tr>
+                </tbody>
+            
+            @empty
+              <p>No subscriptions found</p>
+             @endforelse
+             
+         </table>
+         
         </div>
       </div>
     </div>
