@@ -7,12 +7,25 @@
       rent an e-scooter and explore Luxembourg's hidden gems with ease. <br>
       Book now and get ready to ride into a thrilling urban adventure!
     </p>
-    <a href="/register">
+    @auth
+            <a href="/plans">
+            <section style="display:flex; justify-content:start">
+             <button type="button" class="btn btn-primary mb-3" style="background-color: #34b38a;">
+          <i class="fa-solid fa-user"> </i> Buy Plan
+        </button>
+      </section>
+            </a>
+                    
+          @else
+          <a href="/register">
       <section style="display:flex; justify-content:start">
         <button type="button" class="btn btn-primary mb-3" style="background-color: #34b38a;">
           <i class="fa-solid fa-user"> </i> Subscribe
         </button>
       </section>
     </a>
+          @endauth
+
   </div>  
 </div>
+
