@@ -27,7 +27,7 @@ class StationSeeder extends Seeder
                 'updated_at' => now(),
             ],
             [
-                'name' => 'Hamilius (Tram)',
+                'name' => 'Hamilius',
                 'address' => '22 Bd Royal, 2449 Ville-Haute',
                 'lat' => 49.611034,
                 'lon' => 6.126194,
@@ -76,7 +76,7 @@ class StationSeeder extends Seeder
             ],
             [
                 'name' => 'Cloche d´Or',
-                'address' => '25 Bd Friedrich Wilhelm Raiffeisen, 2411 Gasperich',
+                'address' => '25 Bd Friedrich Wilhelm, 2411 Gasperich',
                 'lat' => 49.583736,
                 'lon' => 6.124974,
                 'capacity' => 23,

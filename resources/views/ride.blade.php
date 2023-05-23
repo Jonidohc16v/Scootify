@@ -29,10 +29,12 @@
                         <div class="card" style="box-shadow: 0 0 20px #34b38a; height: 100%;">
                             <div class="card-body" style="text-align: center">
                                 <h2 class="card-title pb-3"><b>{{ $station->name }}</b></h2>
-                                <p>ID: {{ $station->id }}</p>
+                                {{-- <p>ID: {{ $station->id }}</p> --}}
                                 <p>Address: {{ $station->address }}</p>                            
-                                <p>Capacity: {{ $station->capacity }}</p>                        
-                                <img src="/images/{{ $station->photo }}" alt="photo" style="max-width: 100%; max-height: 8rem;">
+                                <p>Capacity: {{ $station->capacity }}</p> 
+                                <i class="fa fa-battery-full" aria-hidden="true"></i>
+                                <i class="fa-solid fa-square-parking"></i>                       
+                                <img src="/images/{{ $station->photo }}" alt="photo" style="width: 100%; height: 50%; object-fit:cover">
                                 <hr style="font-size: 1rem; border:1px solid #34b38a;">
                             </div>
                         </div>
