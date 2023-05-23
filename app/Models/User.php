@@ -61,5 +61,17 @@ class User extends Authenticatable
         return $this->hasMany(Subscription::class);
     }
 
+/// DELETE USER ///
+
+use Notifiable;
+
+
+
+public function delete()
+{
+    
+    parent::delete();
+}
+
 
 }
