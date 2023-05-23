@@ -100,7 +100,7 @@ class PlanController extends Controller
                 }
                 $subscription->status ='paid';
                 $subscription->save();
-                return view('user', compact('customer'))->with('success', 'Payment successfull'.$user['name']);
+                return view('users.user', compact('customer'))->with('message', 'Payment successfull'.$user['name']);
                 
 
 
