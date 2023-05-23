@@ -1,23 +1,15 @@
 <?php
 
+use Illuminate\Http\Request;
 use App\Http\Controllers\ContactUs;
-use App\Http\Controllers\ContactUsController;
 use Illuminate\Support\Facades\Route;
-
-
-
+use App\Http\Controllers\RideController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\GoogleController;
-
-
-
+use App\Http\Controllers\StationController;
+use App\Http\Controllers\ContactUsController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\PlanController;
-
-
-
-
-
 
 
 
@@ -45,11 +37,11 @@ Route::get('/index', function () {
     return view('index');
 });
 
-Route::get('/price', function() {
+Route::get('/price', function () {
     return view('price');
 });
 
-Route::get('/faq', function(){
+Route::get('/faq', function () {
     return view('faq');
 });
 
@@ -60,9 +52,11 @@ Route::get('/register', [UserController::class, 'create'])->middleware('guest');
 Route::get('/login', [UserController::class, 'login'])->name('login')->middleware('guest');
 
 
-Route::get('/how-it-works', function(){
+Route::get('/how-it-works', function () {
     return view('how-it-works');
 });
+
+
 
 //contactUs form
 Route::get('/contactus', [ContactUsController::class, 'create']);
@@ -77,9 +71,6 @@ Route::post('/register', [UserController::class, 'store']);
 // Create logout
 Route::post('/logout', [UserController::class, 'logout'])->middleware('auth');
 
-
-// google
-Route::get('stations', [GoogleController::class, 'index']);
 
 // User Page
 Route::get('/user', function(){
@@ -120,6 +111,17 @@ Route::get('/success',[PlanController::class,'success'])->name('checkout.success
 Route::get('/checkout',[PlanController::class,'checkout'])->name('checkout.cancel');
 });
 
+// googlemap
+Route::get('/stations', [GoogleController::class, 'index']);
+
+//station 
+ Route::get('/station', function(){
+     return view('station');
+ });
+
+Route::get('/ride', [StationController::class, 'index']);
+
+Route::post('/ride', [RideController::class, 'store'])->name('store.ride');
 
 
 
