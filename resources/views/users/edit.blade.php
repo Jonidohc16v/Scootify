@@ -110,8 +110,8 @@
 
 
 
+/* document.querySelector('#btn').disabled=true; */
 
-document.querySelector('#btn').disabled=true;
 </script>
 
 
