@@ -119,11 +119,10 @@ Route::get('/stations', [GoogleController::class, 'index']);
      return view('station');
  });
 
+Route::middleware("auth")->group(function () {
 Route::get('/ride', [StationController::class, 'index']);
-
-Route::post('/ride', [RideController::class, 'store'])->name('store.ride');
-
-
-
+Route::post('/ride/pickup', [RideController::class, 'pickup'])->name('ride.pickup');
+Route::post('/ride/dropoff', [RideController::class, 'dropoff'])->name('ride.dropoff');
+ });
 
 
