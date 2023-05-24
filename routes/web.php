@@ -10,6 +10,7 @@ use App\Http\Controllers\StationController;
 use App\Http\Controllers\ContactUsController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\PlanController;
+use App\Http\Controllers\Escooter;
 
 
 
@@ -121,7 +122,10 @@ Route::get('/stations', [GoogleController::class, 'index']);
 
 Route::get('/ride', [StationController::class, 'index']);
 
-Route::post('/ride', [RideController::class, 'store'])->name('store.ride');
+
+Route::post('/ride/pickup', [RideController::class, 'pickup'])->name('ride.pickup');
+Route::post('/ride/dropoff', [RideController::class, 'dropoff'])->name('ride.dropoff');
+
 
 
 
