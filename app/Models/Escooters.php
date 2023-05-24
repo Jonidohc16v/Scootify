@@ -2,16 +2,14 @@
 
 namespace App\Models;
 
-use App\Models\Ride;
-use App\Models\Station;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
 
 class Escooters extends Model
 {
     use HasFactory;
 
-    /**
+     /**
      * The attributes that are mass assignable.
      *
      * @var array
