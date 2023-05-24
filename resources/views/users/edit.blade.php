@@ -1,5 +1,12 @@
 <x-layout>
 
+<style>
+
+
+
+</style>
+
+
     <div>
 
         <form id="formAccountSettings" method="POST" action="{{ route('edit.update', auth()->id()) }}"
