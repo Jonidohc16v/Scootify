@@ -9,11 +9,11 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up(): void
+    public function up()
     {
         Schema::create('escooters', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('stations_id')->nullable();
+            $table->foreignId('station_id')->nullable()->constrained('stations');
             $table->integer('battery_level');
             $table->integer('status');
             $table->foreignId('ride_id')->nullable();

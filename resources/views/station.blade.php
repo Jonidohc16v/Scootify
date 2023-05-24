@@ -6,6 +6,7 @@
     <input type="text" id="search" placeholder="Search for a location">
     <button onclick="searchLocation()">Search</button>
 
+    
     <!-- Map container -->
     <div id="map"></div>
 

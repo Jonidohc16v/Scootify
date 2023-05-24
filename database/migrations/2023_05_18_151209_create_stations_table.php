@@ -11,18 +11,19 @@ return new class extends Migration
      */
     public function up(): void
     {
+        
         Schema::create('stations', function (Blueprint $table) {
             $table->increments('id');
-			$table->string('name');
+            $table->string('name');
             $table->string('address');
             $table->float('lat');
             $table->float('lon');
             $table->integer('capacity');
             $table->string('photo');
-		    $table->foreignId('user_id')->nullable();
-		    $table->foreignId('escooters_id')->nullable();
+            $table->foreignId('user_id')->nullable();
             $table->timestamps();
         });
+        
     }
 
     /**

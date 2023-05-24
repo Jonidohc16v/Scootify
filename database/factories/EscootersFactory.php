@@ -22,11 +22,10 @@ class EscootersFactory extends Factory
     public function definition()
     {
         return [
-            'stations_id' => $this->faker->numberBetween(1, 6),
+            'station_id' => $this->faker->numberBetween(1, 6),
             'battery_level' => $this->faker->numberBetween(0, 100),
             'status' => $this->faker->randomElement([0, 1]),
-            'ride_id' =>null
-        
+            'ride_id' => null
         ];
     }
 }
