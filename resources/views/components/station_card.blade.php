@@ -70,7 +70,7 @@
 
   <!-- Single item -->
   <div class="carousel-item">
-    <img    src="{{asset('images/clochedor.jpeg')}}" 
+    <img    src="{{asset('images/clochedor.jpg')}}" 
             class="d-block w-100"  
             alt="Sunset Over the City"
             style="height:25rem"/>
