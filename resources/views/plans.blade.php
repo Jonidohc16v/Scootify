@@ -114,6 +114,15 @@
           </span><br>
           FIND A STATION</a>
       </li>
+      @auth
+          <li class="nav-item">
+            <a class="nav-link" href="/ride">
+              <span class="material-symbols-outlined">
+                star
+              </span><br>
+              GET A RIDE</a>
+          </li>
+          @endauth
     </ul>
     <!-- Left links -->
 
