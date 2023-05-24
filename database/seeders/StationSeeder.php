@@ -59,8 +59,12 @@ class StationSeeder extends Seeder
                 'address' => '25 Bd Friedrich Wilhelm, 2411 Gasperich',
                 'lat' => 49.583736,
                 'lon' => 6.124974,
-                'capacity' => 10,
+                'capacity' => 23,
                 'photo' => 'clochedor.jpg',
+                'user_id' => 6,
+                'escooters_id' => 27,
+                'created_at' => now(),
+                'updated_at' => now(),
             ]
         ];
         foreach ($stations as $station) {
