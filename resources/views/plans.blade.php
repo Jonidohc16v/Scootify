@@ -23,7 +23,7 @@
                       <form action="{{ route('checkout', ['plan_id' => $plan->id]) }}" method="POST">
                         @csrf
                         <input type="hidden" name="plan_id" value="{{ $plan->id }}">
-                        <button type="submit" class="btn btn-success mt-2">Checkout</button>
+                        <button type="submit" class="btn btn-success mt-2" style="background-color:#34b38a">Checkout</button>
                     </form>
                   </div>
               </div>
