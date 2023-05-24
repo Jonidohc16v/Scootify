@@ -286,8 +286,45 @@ document.documentElement.scrollTop = 0;
 }
 
 
+// RIDE SCRIPT
+const stationSelect = document.getElementById('station');
+    const escooterSelect = document.getElementById('escooter');
 
+    stationSelect.addEventListener('change', (event) => {
+        const selectedStationId = event.target.value;
+        updateEscooterOptions(selectedStationId);
+    });
 
+    function updateEscooterOptions(stationId) {
+        const escooters = document.querySelectorAll('#escooter option');
+        
+        escooters.forEach((option) => {
+            const escooterStationId = option.getAttribute('data-station-id');
+
+            if (escooterStationId === stationId || stationId === '') {
+                option.style.display = 'block';
+            } else {
+                option.style.display = 'none';
+            }
+        });
+    }
+
+    // Add event listener to the submit button of the first form
+  document.getElementById('firstForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent default form submission behavior
+    
+    // Get the value from the first form input field
+    var inputValue = document.getElementById('escooter').value;
+    
+    // Store the value in localStorage or a variable
+    localStorage.setItem('storedValue', inputValue);
+    
+    // Use the stored value to populate the second form input field
+    document.getElementById('escooter1').value = inputValue;
+    
+    // Optional: You can also clear the value from the first input field
+    document.getElementById('escooter').value = '';
+  });
 
 
 
