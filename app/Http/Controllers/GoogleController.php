@@ -19,7 +19,7 @@ class GoogleController extends Controller
      */
     public function index()
     {
-        $locations = DB::table('stations')->select('id', 'name', 'address', 'lat', 'lon', 'capacity', 'photo', 'user_id', 'escooters_id', 'created_at', 'updated_at')->get();
+        $locations = DB::table('stations')->select('id', 'name', 'address', 'lat', 'lon', 'capacity', 'photo', 'user_id', 'created_at', 'updated_at')->get();
         return view('googleAutocomplete', compact('locations'));
     }
 }
