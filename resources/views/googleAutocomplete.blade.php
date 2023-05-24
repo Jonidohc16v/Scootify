@@ -143,7 +143,7 @@
                         </a>
                         <form class="inline" method="POST" action="/logout">
                             @csrf
-                            <button type="submit" class="btn btn-primary me-3" style="background-color: #9b2b1e">>
+                            <button type="submit" class="btn btn-primary me-3 mt-3" style="background-color: #9b2b1e">>
                                 <i class="fa-solid fa-door-closed"></i>
                                 Log Out
                             </button>
