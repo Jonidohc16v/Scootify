@@ -19,8 +19,8 @@ return new class extends Migration
             $table->float('lon');
             $table->integer('capacity');
             $table->string('photo');
-		    $table->foreignId('user_id');
-		    $table->foreignId('escooters_id');
+		    $table->foreignId('user_id')->nullable();
+		    $table->foreignId('escooters_id')->nullable();
             $table->timestamps();
         });
     }

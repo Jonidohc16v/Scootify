@@ -16,13 +16,15 @@ class Station extends Model
     protected $fillable = [
         'name',
         'address',
-        'lat' ,
-        'lon' ,
+        'lat',
+        'lon',
         'capacity',
-        'photo' ,
+        'photo',
         'user_id',
-        'escooters_id',
-        'created_at',
-        'updated_at' ,
     ];
+
+    public function escooters()
+    {
+        return $this->hasMany(Escooter::class);
+    }
 }
