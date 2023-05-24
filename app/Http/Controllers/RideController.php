@@ -27,6 +27,7 @@ class RideController extends Controller
 
         // Update the number of available e-scooters in the stations table
         Station::where('id', $stationId)->decrement('capacity');
+        //**** */
 
         // Show a message to the user with the assigned e-scooter ID
         $message = 'You can take e-scooter ID: ' . $escooterId;
