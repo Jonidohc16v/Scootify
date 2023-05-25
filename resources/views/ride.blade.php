@@ -1,40 +1,10 @@
 <x-layout>
     <!-- Your HTML code for the ride page -->
-    @if (session('message'))
+    {{-- @if (session('message'))
         <div class="alert alert-success">
             {{ session('message') }}
         </div>
-    @endif
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-    <script>
-        $(document).ready(function() {
-            // Disable escooter dropdown initially
-            $('#escooter1').prop('disabled', true);
-
-            // Enable escooter dropdown when a station is selected
-            $('#station1').change(function() {
-                if ($(this).val() !== '') {
-                    $('#escooter1').prop('disabled', false);
-                } else {
-                    $('#escooter1').prop('disabled', true);
-                }
-            });
-        });
-        $(document).ready(function() {
-            // Disable escooter dropdown initially
-            $('#escooter2').prop('disabled', true);
-
-            // Enable escooter dropdown when a station is selected
-            $('#station2').change(function() {
-                if ($(this).val() !== '') {
-                    $('#escooter2').prop('disabled', false);
-                } else {
-                    $('#escooter2').prop('disabled', true);
-                }
-            });
-        });
-    </script>
+    @endif --}}
 
 
     <div style="display: flex; justify-content: space-between;">
@@ -55,9 +25,6 @@
                             {{ $escooter->id }}</option>
                     @endforeach
                 </select>
-
-                <label for="ride">Ride ID:</label>
-                <input type="text" name="ride_id" value="1" id="ride_id" style="width: 100%">
                 <br><br>
                 <button type="submit" name="action" value="pickup" class="btn btn-primary me-3 btn-sm"
                     style="background-color: #34b38a">Pickup E-scooter</button>
@@ -65,10 +32,10 @@
 
             {{-- DROP OFF SCOOTER FORM --}}
 
-            <form action="{{ route('ride.dropoff') }}" method="POST" id="" style="height: 50%;">
+            <form action="{{ route('ride.dropoff') }}" method="POST" id="secondForm" style="height: 50%;">
                 @csrf
                 <label for="station">Select Station:</label>
-                <select name="station" id="station" style="width: 100%;">
+                <select name="station" id="station1" style="width: 100%;">
                     @foreach ($stations as $station)
                         <option value="{{ $station->id }}">{{ $station->name }}</option>
                     @endforeach
@@ -80,8 +47,6 @@
                             {{ $escooter->id }}</option>
                     @endforeach
                 </select>
-                <label for="ride">Ride ID:</label>
-                <input type="text" name="ride_id" value="1" id="ride_id" style="width: 100%">
                 <br><br>
                 <button type="submit" name="action" value="park" class="btn btn-primary me-3 btn-sm"
                     style="background-color: #34b38a">Park E-scooter</button>
@@ -108,6 +73,7 @@
                                     </p>
                                     <img src="/images/{{ $station->photo }}" alt="photo"
                                         style="width: 100%; height: 50%; object-fit:cover">
+
                                     <hr style="font-size: 1rem; border:1px solid #34b38a;">
                                 </div>
                             </div>
