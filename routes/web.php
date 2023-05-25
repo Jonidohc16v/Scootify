@@ -46,6 +46,10 @@ Route::get('/faq', function () {
     return view('faq');
 });
 
+Route::get('/aboutus', function () {
+    return view('aboutus');
+});
+
 // Show Register/Create Form
 Route::get('/register', [UserController::class, 'create'])->middleware('guest');
 
