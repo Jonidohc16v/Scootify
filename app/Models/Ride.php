@@ -16,8 +16,8 @@ class Ride extends Model
         'scooter_id',
         'start_station',
         'end_station',
-        // 'start_time',
-        // 'end_time',
+        'start_time',
+        'end_time',
                 // Add other fillable fields here
 
         ];

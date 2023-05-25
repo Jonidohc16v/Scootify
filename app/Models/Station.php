@@ -31,6 +31,10 @@ class Station extends Model
         return $this->hasMany(Escooter::class);
     }
 
+    public function users(){
+        return $this->hasMany(User::class);
+    }
+
     // Define the computed attribute for available escooters count
     public function getAvailableEscootersAttribute()
     {

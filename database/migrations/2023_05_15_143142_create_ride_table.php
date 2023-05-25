@@ -15,10 +15,10 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id');
             $table->foreignId('scooter_id');
-            $table->string('start_station');
-            $table->string('end_station');
-            $table->integer('start_time');
-            $table->integer('end_time');
+            $table->string('start_station')->nullable();
+            $table->string('end_station')->nullable();
+            $table->timestamp('start_time')->nullable();
+            $table->timestamp('end_time')->nullable();
             $table->timestamps();
         });
     }
