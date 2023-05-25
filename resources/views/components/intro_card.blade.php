@@ -1,5 +1,5 @@
 <style>
-  @media only screen and (max-width: 1323px){
+  @media only screen and (max-width: 1200px){
 
     #homeCard p{
       display:none;
