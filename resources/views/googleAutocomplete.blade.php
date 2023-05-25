@@ -183,7 +183,7 @@
     <div style="height:100%">
         <!-- Search input and button -->
         <input type="text" id="search" placeholder="Search for a location">
-        <button onclick="searchLocation()" style="width: 8%;">Search</button>
+        <button class="btn btn-primary mb-2" onclick="searchLocation()" style="width: 8%;background-color: #34b38a">Search</button>
 
         <!-- Map container -->
         <div id="map"></div>
