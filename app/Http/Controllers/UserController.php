@@ -99,7 +99,7 @@ public function update(User $user, Request $request)
     ]);
 
             if($user->update()){
-                return redirect('/user', compact('ride'))->with('success', 'Updated');
+                return redirect('/user')->with('success', 'Updated');
             }
     
 }
