@@ -25,9 +25,6 @@
                             {{ $escooter->id }}</option>
                     @endforeach
                 </select>
-
-                <label for="ride">Ride ID:</label>
-                <input type="text" name="ride_id" value="1" id="ride_id" style="width: 100%">
                 <br><br>
                 <button type="submit" name="action" value="pickup" class="btn btn-primary me-3 btn-sm"
                     style="background-color: #34b38a">Pickup E-scooter</button>
@@ -50,8 +47,6 @@
                             {{ $escooter->id }}</option>
                     @endforeach
                 </select>
-                <label for="ride">Ride ID:</label>
-                <input type="text" name="ride_id" value="1" id="ride_id" style="width: 100%">
                 <br><br>
                 <button type="submit" name="action" value="park" class="btn btn-primary me-3 btn-sm"
                     style="background-color: #34b38a">Park E-scooter</button>
