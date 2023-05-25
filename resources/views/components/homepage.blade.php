@@ -7,7 +7,7 @@
 
 <div class="container mt-5 mb-7 d-flex justify-content-center">
 
-        <!-- Stations -->
+        <!-- Stations 1  -->
 
   <div class="row gap-5 justify-content-center">
     <div class="card col-12 col-sm-4 rounded-circle" style="width: 12rem; box-shadow: 0 0 20px #34b38a">

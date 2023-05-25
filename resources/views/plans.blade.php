@@ -1,5 +1,31 @@
 <x-layout>
 
+  <style>
+  body{
+      font-family: 'Play', sans-serif;
+      text-align: center;
+  }
+  
+  /*Code to change color of active link*/
+  .navbar-nav li a {
+  color: black;
+  }
+  .navbar-nav li.active a {
+  color: #34b38a;
+  }
+  
+  .selected {
+      transform: scale(1.05);
+      border: 2px solid #34b38a;
+  }
+</style>
+
+
+
+
+ 
+
+
 <main>
 @if (session('error'))
   <div class="alert alert-danger">
