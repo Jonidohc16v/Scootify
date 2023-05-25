@@ -170,6 +170,7 @@
                     <section class="d-flex justify-content-center gap-4">
                         <p class=""><a href="/faq"><span class="text-dark">FAQ</span></a></p>
                         <p class=""><a href="/contactus"><span class="text-dark">Contact us!</span> </a></p>
+                        <p class=""><a href="/aboutus"><span class="text-dark">About us</span> </a></p>
                     </section>
                     <!-- Section: CTA -->
                 </div>
