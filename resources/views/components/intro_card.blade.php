@@ -1,6 +1,28 @@
+<style>
+  @media only screen and (max-width: 1200px){
+
+    #homeCard p{
+      display:none;
+    }
+    
+
+   
+
+
+  }
+
+  @media only screen and (max-width: 800px){
+    #homeCard{
+      display:flex;
+    }
+  }
+
+
+  </style>
+
 <div class="card bg-dark text-dark mx-auto mt-4" style="width: 70%; text-shadow: #34b38a 1px 0 10px;">
-  <img src="/images/homepage-image.jpg" class="card-img" alt="Scootify ride"/>
-  <div class="card-img-overlay" style="text-align:left; padding:5rem 1rem">
+  <img src="/images/homepage-image.jpg" class="card-img" alt="Scootify ride" id="imageCard"/>
+  <div class="card-img-overlay" style="text-align:left; padding:5rem 1rem" id="homeCard">
     <h1 class="card-title" style="color: #0e1013">SCOOTIFY</h1>
     <p class="card-text" style="color: white">
       Unleash the adventurer in you <br>

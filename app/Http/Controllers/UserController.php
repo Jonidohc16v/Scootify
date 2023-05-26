@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Ride;
 use App\Models\User;
 use App\Models\Subscription;
 use Illuminate\Http\Request;

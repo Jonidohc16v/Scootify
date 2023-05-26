@@ -108,7 +108,7 @@
                 </li>
 
                 <li><i class="fas fa-envelope mt-4 fa-2x"></i>
-                    <p>contact@scootify.lu</p>
+                    <p>scootify.lu@gmail.com</p>
                 </li>
             </ul>
         </div>

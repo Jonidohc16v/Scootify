@@ -31,6 +31,11 @@ use App\Http\Controllers\PlanController;
 
 
 Route::get('/', function () {
+    return view('welcome');
+});
+
+
+Route::get('/index', function () {
     return view('index');
 });
 
@@ -40,6 +45,10 @@ Route::get('/price', function () {
 
 Route::get('/faq', function () {
     return view('faq');
+});
+
+Route::get('/aboutus', function () {
+    return view('aboutus');
 });
 
 // Show Register/Create Form

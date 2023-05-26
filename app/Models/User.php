@@ -3,6 +3,7 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+use App\Models\Ride;
 use App\Models\Subscription;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
@@ -59,6 +60,14 @@ class User extends Authenticatable
 
     public function subscriptions(){
         return $this->hasMany(Subscription::class);
+    }
+
+    public function ride(){
+        return $this->hasMany(Ride::class);
+    }
+
+    public function stops(){
+        return $this->belongsTo(Station::class);
     }
 
 /// DELETE USER ///

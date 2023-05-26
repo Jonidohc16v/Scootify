@@ -152,7 +152,7 @@
                         </a>
                         <form class="inline" method="POST" action="/logout">
                             @csrf
-                            <button type="submit" class="btn btn-primary me-3" style="background-color: #9b2b1e">>
+                            <button type="submit" class="btn btn-primary me-3 mt-3" style="background-color: #9b2b1e">>
                                 <i class="fa-solid fa-door-closed"></i>
                                 Log Out
                             </button>
@@ -183,7 +183,7 @@
     <div style="height:100%">
         <!-- Search input and button -->
         <input type="text" id="search" placeholder="Search for a location">
-        <button onclick="searchLocation()" style="width: 8%;">Search</button>
+        <button class="btn btn-primary mb-2" onclick="searchLocation()" style="width: 8%;background-color: #34b38a">Search</button>
 
         <!-- Map container -->
         <div id="map"></div>
@@ -323,15 +323,8 @@
                   const content = `
           <div>
             <h3>${name}</h3>
-            <p>ID: ${id}</p>
             <p>Address: ${address}</p>
-            <p>Latitude: ${lat}</p>
-            <p>Longitude: ${lon}</p>
             <p>Capacity: ${capacity}</p>
-            <p>User ID: ${user_id}</p>
-            <p>Escooters ID: ${escooters_id}</p>
-            <p>Created At: ${created_at}</p>
-            <p>Updated At: ${updated_at}</p>
             <img id="photo" src="/images/${photo}" alt="photo">
           </div>
         `;
