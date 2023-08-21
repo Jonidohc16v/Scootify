@@ -32,6 +32,7 @@
                                         </label>
                                         <input type="text" id="name" name="name"
                                         class="form-control text-center" value="{{ old('name', auth()->user()->name) }}"> 
+                                        <p id="name-message" class="text-danger text-sm mt-1"></p>
                                         @error('name')                                                                                          <p class="text-danger text-sm mt-1">{{$message}}</p>
                                         @enderror                                                     
                                     </div>
@@ -64,7 +65,7 @@
                                             </label>
                                             <input type="text" id="address" name="address"
                                                 class="form-control text-center" value="{{ old('address', auth()->user()->address) }}">
-                                            @error
+                                            @error('address')
                                             <p class="text-danger text-sm mt-1">{{$message}}</p>
                                             @enderror    
                                         </div>
@@ -80,7 +81,7 @@
                                         </label>
                                         <input type="text" id="phone_number" name="phone_number"
                                             class="form-control text-center" value="{{ old('phone_number', auth()->user()->phone_number) }}">
-                                        @error
+                                        @error('phone_number')
                                         <p class="text-danger text-sm mt-1">{{$message}}</p>
                                         @enderror
                                     </div>
@@ -153,6 +154,24 @@
             formButton.disabled = false;
         }
     }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const nameInput = document.getElementById('name');
+        const messageElement = document.getElementById('name-message');
+
+        nameInput.addEventListener('input', function() {
+            const inputValue = nameInput.value;
+            const minLength = 3; 
+            const remainingLength = minLength - inputValue.length;
+
+            if (remainingLength > 0) {
+                messageElement.textContent = `The name must be at least 3 characters long`;
+            } else {
+                messageElement.textContent = '';
+            }
+        });
+    });
+
 </script>
 
 
