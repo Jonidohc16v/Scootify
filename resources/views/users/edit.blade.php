@@ -1,3 +1,4 @@
+
 <x-layout>
 
     <div>
@@ -30,7 +31,9 @@
                                             <h4>Full Name</h4>
                                         </label>
                                         <input type="text" id="name" name="name"
-                                            class="form-control text-center" value="{{ auth()->user()->name }}">
+                                        class="form-control text-center" value="{{ old('name', auth()->user()->name) }}"> 
+                                        @error('name')                                                                                          <p class="text-danger text-sm mt-1">{{$message}}</p>
+                                        @enderror                                                     
                                     </div>
                                 </div>
                                 <!-- End Full Name-->
@@ -43,7 +46,10 @@
                                                 <h4>Email</h4>
                                             </label>
                                             <input type="text" id="email" name="email"
-                                                class="form-control text-center" value="{{ auth()->user()->email }}">
+                                                class="form-control text-center" value="{{ old('email', auth()->user()->email) }}">
+                                            @error('email')
+                                            <p class="text-danger text-sm mt-1">{{$message}}</p>
+                                            @enderror
                                         </div>
                                     </div>
                                 </div>
@@ -57,7 +63,10 @@
                                                 <h4>Address</h4>
                                             </label>
                                             <input type="text" id="address" name="address"
-                                                class="form-control text-center" value="{{ auth()->user()->address }}">
+                                                class="form-control text-center" value="{{ old('address', auth()->user()->address) }}">
+                                            @error
+                                            <p class="text-danger text-sm mt-1">{{$message}}</p>
+                                            @enderror    
                                         </div>
                                     </div>
                                 </div>
@@ -70,7 +79,10 @@
                                             <h4>Phone Number</h4>
                                         </label>
                                         <input type="text" id="phone_number" name="phone_number"
-                                            class="form-control text-center" value="{{ auth()->user()->phone_number }}">
+                                            class="form-control text-center" value="{{ old('phone_number', auth()->user()->phone_number) }}">
+                                        @error
+                                        <p class="text-danger text-sm mt-1">{{$message}}</p>
+                                        @enderror
                                     </div>
                                 </div>
                             </div>

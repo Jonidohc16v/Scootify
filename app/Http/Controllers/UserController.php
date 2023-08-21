@@ -90,17 +90,27 @@ public function index()
 
 public function update(User $user, Request $request)
 {
+    //fetching the data from database
+    $formFields = $request->validate([
+        'name' => ['required', 'min:3'],
+        'email' => ['required', 'email', Rule::unique('users', 'email')->ignore($user->id)], //here it's to prevent to check for the uniqueness of the name
+        'phone_number' => 'required|numeric',
+        'address' => ['required', 'min:8'],
+    ]);
+
+    //updating the data
     $user->update([
-        'name' => $request->name,
-        'email' => $request->email,
-        'address' => $request->address,
-        'phone_number' => $request->phone_number,
+        'name' => $formFields['name'],
+        'email' => $formFields['email'],
+        'address' => $formFields['address'],
+        'phone_number' => $formFields['phone_number'],
         'updated_at' => now()
     ]);
 
-            if($user->update()){
+    return redirect('/user')->with('success', 'Updated');
+            /*if($user->update()){
                 return redirect('/user')->with('success', 'Updated');
-            }
+            }*/
     
 }
 

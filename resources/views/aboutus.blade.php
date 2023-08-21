@@ -23,7 +23,7 @@
           </div>
           <div class="col-lg" style="text-align:left">
             <h2>Jonathan TEIXEIRA</h2>
-            <h4>FULLSTACK DEVELOPER Junior</h4>
+            <h4>THE JUKEBOX DEVELOPER Junior</h4>
             <p>IT background : C++, C#, Cisco</p>
 
             <h5>Description:</h5> 
@@ -44,7 +44,7 @@
           </div>
           <div class="col-lg" style="text-align:left">
             <h2>Thaer SHKEIR</h2>
-            <h4>FULLSTACK DEVELOPER Junior</h4>
+            <h4>ARAK MASTER DEVELOPER Junior</h4>
             <p>IT background : Cisco</p>
 
             <h5>Description:</h5> 
@@ -65,7 +65,7 @@
           </div>
           <div class="col-lg" style="text-align:left">
             <h2>Jan GIMENEZ</h2>
-            <h4>FULLSTACK DEVELOPER Junior</h4>
+            <h4>EL BAILARINO DEVELOPER Junior</h4>
             <p>IT background : 1 year in IT systems, Python</p>
 
             <h5>Description:</h5> 
@@ -85,7 +85,7 @@
           </div>
           <div class="col-lg" style="text-align:left">
             <h2>Sandra NGUYEN</h2>
-            <h4>FULLSTACK DEVELOPER Junior</h4>
+            <h4>THE MINION DEVELOPER Junior</h4>
 
             <h5>Description:</h5> 
             <p>Passionate Junior Web Designer with a unique blend of creativity and problem-solving skills. I'm a very motivated personn with excellent communication and leadership abilities. Building positive relationships is important to me, and I adapt seamlessly to multicultural environments. I'm open-minded and super social. As a manager, I effectively motivate teams, and I handle time management, deadlines, and stress with ease. Training and mentoring others is a true passion for me.</p>
@@ -104,7 +104,7 @@
           </div>
           <div class="col-lg" style="text-align:left">
             <h2>Jose NINITAS</h2>
-            <h4>FULLSTACK DEVELOPER Junior</h4>
+            <h4>THE MIMOSA DEVELOPER Junior</h4>
 
             <h5>Description:</h5> 
             <p> Former restaurant manager that turned to a junior web developer driven by curiosity and creativity. Transitioning to web development was a natural choice for me as it allowed me to explore new horizons and challenge myself. As a web developer, I thrive in transforming abstract ideas into visually stunning and functional websites. My transition showcases a strong work ethic and dedication to personal growth. With my skills, drive, and innovative mindset, I'm confident in making a valuable impact as a web developer.
